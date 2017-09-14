@@ -1,6 +1,6 @@
 #Site
-title: 水榭清松-Song Kong
-description: This is Song' home.
+title: SUNNY的白熊乐园
+description: 这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。
 logo: favicon.png
 url: soso20120.github.io
 #rss_url: /feed.xml
@@ -21,7 +21,7 @@ sass:
 
 # Comment
 comment:
-  disqus: kongsong    
+  disqus: Sunny    
   # duoshuo: kongsong
   # youyan: 2122392
   laibili: MTAyMC8yODgzNC81NDA0
@@ -33,17 +33,17 @@ baidu_analytics: 5b31ffbbdc6cff18727f3adf75a03777    #from //hm.baidu.com/hm.js?
 # Author information:
 author:
   #resume: /resume
-  name: Song Kong     #the name of Blog section
-  about_me: I'm Song Kong, a student from BUPT. This is my online home & blog, where I share thoughts about front-end development, my daily life and other insteresting topics. Feel free to contact me by email if you have any question.
+  name: Sunny     #the name of Blog section
+  about_me: 这是SUNNY的BLOG，分享计算机的学习过程。有什么问题或者没有，都欢迎与我交流。
  
 # Social Links
-email:               hi@kongsong.me
+email:               huanke1303@126.com
 #google.plus:        username
 #twitter:            username
-facebook:            kongsong
-github:              songkong
-stackoverflow:      6438519/song-kong   #from a "http://stackoverflow.com/users/123456/username" link
-linkedin:           kongsong
+# facebook:            kongsong
+# github:              songkong
+# stackoverflow:      6438519/song-kong   #from a "http://stackoverflow.com/users/123456/username" link
+# linkedin:           kongsong
 #xing:              username
 #instagram:          username
 #lastfm:            username

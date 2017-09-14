@@ -1,13 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>水榭清松-Song Kong</title>
-    <description>This is Song' home.</description>
+    <title>SUNNY的白熊乐园</title>
+    <description>这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Sep 2017 17:20:35 +0800</pubDate>
-    <lastBuildDate>Wed, 13 Sep 2017 17:20:35 +0800</lastBuildDate>
+    <pubDate>Thu, 14 Sep 2017 22:26:22 +0800</pubDate>
+    <lastBuildDate>Thu, 14 Sep 2017 22:26:22 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>继承</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1原型链&quot; id=&quot;markdown-toc-1原型链&quot;&gt;1、原型链&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2借用构造函数&quot; id=&quot;markdown-toc-2借用构造函数&quot;&gt;2、借用构造函数&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3组合继承&quot; id=&quot;markdown-toc-3组合继承&quot;&gt;3、组合继承&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4原型式继承&quot; id=&quot;markdown-toc-4原型式继承&quot;&gt;4、原型式继承&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5寄生式继承&quot; id=&quot;markdown-toc-5寄生式继承&quot;&gt;5、寄生式继承&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6寄生组合式继承&quot; id=&quot;markdown-toc-6寄生组合式继承&quot;&gt;6、寄生组合式继承&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;继承是面向对象程序设计中最常见的一个概念，许多面向对象语言都支持两种继承方式：接口继承和实现继承。接口继承只能继承方法签名，而实现继承则继承实际的方法。ECMAScript只支持实现继承，而且实现继承主要是依靠原型链来实现的。&lt;/p&gt;
+
+&lt;h3 id=&quot;1原型链&quot;&gt;1、原型链&lt;/h3&gt;
+&lt;p&gt;原型链的基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。&lt;br /&gt;
+构造函数、原型和实例的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。&lt;br /&gt;
+实现原型链的基本模式&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function SuperType(){        //被继承的函数叫做超类型（父类，基类）
+	this.property = true;
+}
+SuperType.prototype.getSuperValue = function(){
+	return this.property;
+};
+function SubType(){        //继承的函数叫做子类型（子类，派生类）
+	this.subproperty = false;
+}
+//继承了SuperType
+SubType.prototype = new SuperType(); //通过原型链继承，超类型实例化后的对象实例，赋值给子类型的原型属性。
+SubType.prototype.getSubValue = function(){
+	return this.subproperty;
+};
+var instance = new SubType();
+alert(instance.getSuperValue()); //true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;原型链虽然很强大，可以用它来实现继承，但也存在一些问题，最主要的问题来自包含引用类型值的原型，包含引用类型值的原型属性会被所有实例共享，这也正是为什么要在构造函数中，而不是在原型对象中定义属性的原因。如下面这个例子所示：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function SuperType(){
+	this.colors = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+}
+function SubType(){
+}
+SubType.prototype = new SuperType();
+var instance1 = new SubType();
+instance1.colors.push(&quot;black&quot;);
+alert(instance.colors);   //&quot;red,blue,green,black&quot;
+var instance2 = new SubType();
+alert(instance2.colors);  //&quot;red,blue,green,black&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;2借用构造函数&quot;&gt;2、借用构造函数&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function SuperType(){
+	this.colors = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+}
+function SubType(){
+	SuperType.call(this); //继承了SuperType
+}
+var instance1 = new SubType();
+instance1.colors.push(&quot;black&quot;);
+alert(instance1.colors);  //&quot;red,blue,green,black&quot;
+var instance2 = new SubType();
+alert(instance2.colors);  //&quot;red,blue,green&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在上面这段代码中，SuperType.call(this)这行代码“借调”了超类型的构造函数，通过使用call()方法（或apply()方法），我们实际上是在（未来将要）新创建的SubType实例的环境下调用了SuperType构造函数，这样一来，就会在新SubType对象上执行SuperType()函数中定义的所有对象初始化代码。结果，SubType的每一个实例就会有自己的colors属性的副本了。&lt;/p&gt;
+
+&lt;h3 id=&quot;3组合继承&quot;&gt;3、组合继承&lt;/h3&gt;
+&lt;p&gt;组合继承也称伪经典继承，指的是将原型链和借用构造函数的技术组合到一起，从而发挥二者之长的一种继承模式。其背后的思路是使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function SuperType(name){
+	this.name = name;
+	this.colors = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+}
+SuperType.prototype.sayName = function(){
+	alert(this.name);
+};
+function SubType(name,age){
+	//继承属性
+	SuperType.call(this,name);
+	this.age = age;
+}
+SubType.prototype = new SuperType();
+SubType.prototype.constructor = SubType;
+SubType.prototype.sayAge = function(){
+  alert(this.age);
+};
+var instance1 = new SubType(&quot;Nicholas&quot;,29);
+instance1.colors.push(&quot;black&quot;);
+alert(instance1.colors);           //&quot;red,blue,green,black&quot;
+instance1.sayName();               //&quot;Nicholas&quot;
+instance1.sayAge();                //&quot;29&quot;
+var instance2 = new SubType(&quot;Greg&quot;,27);
+alert(instance2.colors);           //&quot;red,blue,green&quot;
+instance1.sayName();               //&quot;Greg&quot;
+instance2.satAge();                //27
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;4原型式继承&quot;&gt;4、原型式继承&lt;/h3&gt;
+&lt;p&gt;原型式继承并没有使用严格意义上的构造函数，它借助原型可以基于已有的对象创建新对象，同时还不必因此创建自定义类型，为了达到这个目的，出现了以下函数：&lt;br /&gt;
+临时中转函数：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function object(o){   //o表示将要传递进入的一个对象
+   function F(){}     //F构造是一个临时新建的对象，用来存储传递过来的对象
+   F.prototype = o;   //将o的对象实例赋值给F构造的原型对象
+   return new F();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;从本质上讲，object()对传入其中的对象执行了一次浅复制。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var person = {
+	name: &quot;Nicholas&quot;,
+	friends: [&quot;Shelby&quot;, &quot;Court&quot;, &quot;Van&quot;]
+};
+var anotherPerson = object(person);
+anotherPerson.name = &quot;Greg&quot;;
+anotherPerson.friends.push(&quot;Rob&quot;);
+
+var yetAnotherPerson = object(person);
+yetAnotherPerson.name = &quot;Linda&quot;;
+yetAnotherPerson.friends.push(&quot;Barbie&quot;);
+
+alert(person.friends);    //&quot;Shelby,Court,Van,Rob,Barbie&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在上面这个例子中，可以作为另一个对象基础的是person对象，我们将它传入到object()函数中，然后该函数就会返回一个新对象，这个对象将person作为原型，所以它的原型中就会包含一个基本类型值属性和一个引用类型值属性，这就意味着person.friends不仅属于person，而且也会被anotherPerson以及yetAnotherPerson共享，这就相当于又创建了person对象的两个副本。&lt;/p&gt;
+
+&lt;h3 id=&quot;5寄生式继承&quot;&gt;5、寄生式继承&lt;/h3&gt;
+&lt;p&gt;寄生式继承的思路与寄生构造函数和工厂模式类似，即创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，最后再像真的是它做了所有工作一样返回对象。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function createAnother(original){
+	var clone = object(original);      //通过调用函数创建一个新对象
+	clone.sayHi = function(){          //以某种方式来增强这个对象
+		alert(&quot;hi&quot;);
+	};
+	return clone;                      //返回这个对象
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在上面这段代码中，createAnother()函数接收了一个参数，也就是要作为新对象基础的对象，然后把这个对象(original)传递给object()函数，将返回到结果赋值给clone。再为clone对象添加一个新方法sayHi()，最后返回clone对象。可以像下面这这样来使用createAnother()函数：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var person = {
+	name = &quot;Nicholas&quot;,
+	friends : [&quot;Shelby&quot;,&quot;Court&quot;,&quot;Van&quot;]
+};
+var anotherPerson = createAnother(person);
+anotherPerson.sayHi();   //&quot;hi&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;6寄生组合式继承&quot;&gt;6、寄生组合式继承&lt;/h3&gt;
+&lt;p&gt;组合继承最大的问题是无论在什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function SuperType(name){
+	this.name = name;
+	this.colors = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+}
+SuperType.prototype.sayName = function(){
+	alert(this.name);
+};
+function SubType(name,age){
+	SuperType.call(this,name);            //第二次调用SuperType()，在新对象上创建了实例属性：name,colors
+	this.age = age;
+}
+SubType.prototype = new SuperType();     //第一次调用SuperType(),SubType的原型会得到两个属性：name,colors
+SubType.prototype.constructor = SubType;
+SubType.prototype.sayAge = function(){
+	alert(this.age);
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要解决上面例子中的两次调用超类型函数的问题，就出现了寄生组合式继承的方法。寄生组合式继承本质上就是使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型，基本模式如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function inheritPrototype(subType,superType){
+	var prtotype = object(superType.prototype);   //创建对象
+	prototype.constructor = subType;              //增强对象
+	subType.prototype = prototype;                //指定对象
+} 实现寄生组合继承的基本步骤是：&amp;lt;br&amp;gt; 第一步是创建超类型原型的一个副本；&amp;lt;br&amp;gt; 第二步是为创建的副本添加constructor属性，从而弥补因重写原型而失去的默认的constructor属性；&amp;lt;br&amp;gt; 第三步是将新创建的对象（即副本）赋值给子类型的原型。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 31 Jul 2017 20:10:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/%E7%BB%A7%E6%89%BF/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/%E7%BB%A7%E6%89%BF/</guid>
+        
+        <category>JS</category>
+        
+        
+        <category>前端</category>
+        
+      </item>
     
       <item>
         <title>由移动端 1px 过粗引发的 viewport 探究</title>
@@ -1103,111 +1306,6 @@ y = ln(tan(45° + Φ/2))&lt;/p&gt;
         <category>Mobile</category>
         
         <category>Plugin</category>
-        
-        <category>JavaScript</category>
-        
-        
-        <category>Tech</category>
-        
-      </item>
-    
-      <item>
-        <title>JS 实现页面调起原生 APP</title>
-        <description>&lt;p&gt;开发活动分享页经常遇到这种需求：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;在分享页点击某个按钮，若本地安装 App，调起 App&lt;/li&gt;
-  &lt;li&gt;若本地没有安装 App，跳转到 App下载页&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;由于微信和微博存在坑，开发中，我们首先判断当前页面是否在微信或微博中，若是，可以显示一个蒙板提醒用户在浏览器中打开当前页面。&lt;/p&gt;
-
-&lt;h4 id=&quot;1-判断浏览器类型&quot;&gt;1. 判断浏览器类型&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 微信或微博内提示在浏览器打开&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/MicroMessenger|Weibo/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 这里做些处理，如现实一个提示在浏览器打开的灰色蒙板&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;2-iframe-调起-app&quot;&gt;2. iframe 调起 App。&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 使用了 Zepto.js，jQuery 同理&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#open_app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#open_app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;naUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是 app 链接，也就是你和 NA 的 RD 小伙伴商量好的协议'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;iframeHtml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;iframe src=&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;naUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&quot; id=&quot;open_app&quot; width=&quot;0&quot; height=&quot;0&quot; style=&quot;border: 0;display: none;&quot;/&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;iframeHtml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;3-判断本地是否安装-app&quot;&gt;3. 判断本地是否安装 App&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;若 iframe 没有成功调起 App，则表示本地没有安装 App，那么此时页面跳转到 App 的下载页面。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
- &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;delayDownload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// 做一下延迟&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isIos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/iphone|ipad|ipod/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isIos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是你的 App 在 Appstore 中的下载链接'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是你的 App 安卓的下载地址'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;4-ios-9-和-10-利用-universal-link-调起-app&quot;&gt;4. IOS 9 和 10 利用 Universal Link 调起 App&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;在 IOS 9 和 10 中，无法利用 iframe 调起 App，可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;location.href&lt;/code&gt;直接跳转 App，但会出现两个问题：1. 当本地有 App 时，Safari 弹出&lt;code class=&quot;highlighter-rouge&quot;&gt;是否打开 App&lt;/code&gt;的弹窗，当用户两次选择&lt;code class=&quot;highlighter-rouge&quot;&gt;取消&lt;/code&gt;时，页面会跳转到苹果官网。2. 当本地无 App 时，Safari 会弹出&lt;code class=&quot;highlighter-rouge&quot;&gt;无效的链接&lt;/code&gt;的弹窗，然后才会弹出&lt;code class=&quot;highlighter-rouge&quot;&gt;是否打开 Appstore&lt;/code&gt;的弹窗，体验非常不好。因此，我们使用 Universal Link 来调起 App。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h6 id=&quot;universal-link-是什么&quot;&gt;Universal Link 是什么？&lt;/h6&gt;
-  &lt;p&gt;简单地说就是通过一个 https 的链接，完成从浏览器直接跳转到 App 或者在没安装 App 的情况下跳转到指定页面。没有是否要进入 App 的弹窗，没有微信客户端限制跳转。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;NA 端如何实现 Universal Link，可以&lt;a href=&quot;http://www.cocoachina.com/ios/20150902/13321.html&quot;&gt;查看这里&lt;/a&gt;。当你的 NA 小伙伴已经开发好后，就可以直接使用相应的协议啦。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/iPhone OS 9|iPhone OS 10/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是你和 NA 小伙伴商量好的协议'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;5-切换到后台后的相关处理&quot;&gt;5. 切换到后台后的相关处理&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;当浏览器切换到后台后，我们需要清除代码中的延迟下载，以防当我们再一次返回页面后，页面跳转到 App 下载地址。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;visibilitychange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webkitvisibilitychange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;msvisibilitychange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;blur&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delayDownload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;clearTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delayDownload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;以上就是实现 Web 调起 App 的整个过程，正式的代码需要调整顺序，比如先做 IOS 9 和 10 的处理，这里就不赘述了。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Mar 2017 12:00:30 +0800</pubDate>
-        <link>http://localhost:4000/blog/web-call-app/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/web-call-app/</guid>
-        
-        <category>CN</category>
-        
-        <category>front-end</category>
-        
-        <category>Mobile</category>
         
         <category>JavaScript</category>
         
