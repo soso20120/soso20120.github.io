@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SUNNY的白熊乐园</title>
-    <description>这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。</description>
+    <title>SUNNY的白熊部落</title>
+    <description>这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。主题来自于Jekyll。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Sep 2017 22:26:22 +0800</pubDate>
-    <lastBuildDate>Thu, 14 Sep 2017 22:26:22 +0800</lastBuildDate>
+    <pubDate>Fri, 15 Sep 2017 21:26:54 +0800</pubDate>
+    <lastBuildDate>Fri, 15 Sep 2017 21:26:54 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -516,49 +516,6 @@ SubType.prototype.sayAge = function(){
         
         
         <category>Tech</category>
-        
-      </item>
-    
-      <item>
-        <title>明光以北，蓟门以南</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;那一年我十八岁，&lt;br /&gt;
-这一年我二十五岁，&lt;br /&gt;
-在我一生的黄金时代，&lt;br /&gt;
-我学会了淡漠、但也记得抗争。&lt;br /&gt;
-站在这里，&lt;br /&gt;
-明光以北、蓟门以南，&lt;br /&gt;
-我望着天上半明半暗的云，&lt;br /&gt;
-离开这里，&lt;br /&gt;
-该有留恋吗？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;没有想到，人生的反转，会来得比电视中的反转剧还滑稽。&lt;/p&gt;
-
-&lt;p&gt;25日，踩着高跟鞋走了两万多步的我，十点钟的时候终于洗了个舒舒服服的澡，潦草的做了个护肤。我想，终于可以安静的在床上挺尸了，直到我打开微信。朋友圈清一色的北邮人BT、论坛关闭通告，我慌张的点开链接，迅速的扫完了文章。了解原尾后，我的手有些发抖，我大声的和室友吐槽，希望可以宣泄心中的委屈与愤怒。&lt;/p&gt;
-
-&lt;p&gt;就在两天前，坐在去往上地的公交上，我在想，当我明年毕业了，我会留恋什么呢？从十八岁踏入北邮校园，到我二十四岁，大概就是王小波口中的黄金时代吧。六年多的时间，我就生活在三环以里的这块地方，我经历了很多，我成熟了不少，我从那个敢说敢做、爱憎分明的水瓶，变成了懂得暗示自己算了吧的大人。时间总是催着我奔跑，我就只能匆匆的拾起那么丁点回忆，这其中，北邮人论坛和北邮人 BT 就占了一大部。&lt;/p&gt;
-
-&lt;p&gt;犹记得大一结束的那个暑假，回到本部的我终于注册了论坛和 BT。那时还是个萌新，只是偶尔水水论坛，回家过了个暑假，竟连帐号名都忘记了，无奈只能重新注册一个，为了不再忘记账号名，我用了名字的全拼做 ID，后来总被人认出真身，也就有了几次啼笑皆非的经历。后来，我下载了「贵邮」，那是我第一次看到&lt;code class=&quot;highlighter-rouge&quot;&gt;明光以北，蓟门以南&lt;/code&gt;这八个字，不知道是谁如此睿智的用它来形容北邮，光是念着，心中就暖暖的漾起了归属感。再后来，就算学校发生了许多不愉快的事情，想想论坛上可爱的 byr，想想这八个字，我依然会义无反顾的「护犊子」，依然为自己是一名 byr 而骄傲。&lt;/p&gt;
-
-&lt;p&gt;当得知论坛将不再对外开放、BT 将永久关闭的那一刻，我说不清自己是什么感受，只想把当时能够想到的所有恶劣的词语用来形容做出这项决定的人。我承认，对于淡漠这项技能，我还不能够游刃有余。当自己所珍惜、热爱的东西遭到侵犯时，我依然冲动着毫不犹豫的站出来，将它护在身后。同一时刻，每一个 byr 都和我做出了同样的选择。在微博、知乎、朋友圈等主流平台上充斥着守护论坛、BT 的文章后，这场保卫战终于以戏剧性的、荒诞的、讽刺的方式结束了。各中详情，我不愿提起，只是觉得好笑，只是心生凄凉。好似有什么东西在慢慢积聚，长成了一个大大的吃豆人，正在慢慢吞噬着我爱的这片明光以北、蓟门以南。我想，我身处其中，被雾霾蒙蔽着眼睛，怎么会看到吃豆人呢？可当我有一天踏出这里，就算着的看到了吃豆人，我又能拿他怎样呢？&lt;/p&gt;
-
-&lt;p&gt;我只能选择独善其身。我只能时刻念着想着我爱的那些人、那些事所留给我的美好念想。我记得在北邮人论坛，我的头像是一只折耳猫，有很多陌生人夸她可爱，年初为了找工作，我加入了意涵团，换了新的头像，没有想到，收到了不少「陌生人」的回复，问我为什么换了头像。原来，有那么多的人在默默记着我。我记得，我上过几次十大，有的是吐槽贴，有的是征友贴，我得到了很多声援，也成功的做了次月老。我记得，大四保研时，我每日沉迷于考研专版，get 了大量北邮导师这样那样的信息，我收到了很多学长学姐给的建议，在后面的两年中，也致力于给更多的学弟学妹分享我掌握的信息。我记得，我的每一次实习归功于招聘实习版块，我总是很骄傲的告诉面试官，我是在北邮人论坛看到招聘启示的。我记得，混迹了六年的论坛，一万多的积分，用过我邮、佳邮、贵邮、北邮人论坛客户端，买过学妹款、十二周年和十三周年的北邮人坛服，我很爱，很爱这里。&lt;/p&gt;
-
-&lt;p&gt;我记得在北邮人 BT，我盼望着能够成为永久用户，年前移动硬盘被摔坏后，我心疼了好久好久。我记得，我买了好多徽章，在商店挑啊挑，那么多男神女神，都不知道如何是好。我记得，我下注了川普，大选唱票那天，我在科研楼焦灼的等待结果。我记得，一年后我就和它告别了，我很舍不得，很舍不得这里。&lt;/p&gt;
-
-&lt;p&gt;我只希望，等我越长越大，也许我有了权利，也许我能够做很多选择，我还能记得这些，记着我爱的、给了我如此美好回忆的这些，时刻不忘初心。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 29 May 2017 21:00:30 +0800</pubDate>
-        <link>http://localhost:4000/blog/byr-bbs-memory/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/byr-bbs-memory/</guid>
-        
-        <category>CN</category>
-        
-        <category>生活</category>
-        
-        
-        <category>Life</category>
         
       </item>
     
@@ -1306,6 +1263,111 @@ y = ln(tan(45° + Φ/2))&lt;/p&gt;
         <category>Mobile</category>
         
         <category>Plugin</category>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>Tech</category>
+        
+      </item>
+    
+      <item>
+        <title>JS 实现页面调起原生 APP</title>
+        <description>&lt;p&gt;开发活动分享页经常遇到这种需求：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在分享页点击某个按钮，若本地安装 App，调起 App&lt;/li&gt;
+  &lt;li&gt;若本地没有安装 App，跳转到 App下载页&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由于微信和微博存在坑，开发中，我们首先判断当前页面是否在微信或微博中，若是，可以显示一个蒙板提醒用户在浏览器中打开当前页面。&lt;/p&gt;
+
+&lt;h4 id=&quot;1-判断浏览器类型&quot;&gt;1. 判断浏览器类型&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 微信或微博内提示在浏览器打开&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/MicroMessenger|Weibo/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 这里做些处理，如现实一个提示在浏览器打开的灰色蒙板&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;2-iframe-调起-app&quot;&gt;2. iframe 调起 App。&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 使用了 Zepto.js，jQuery 同理&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#open_app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#open_app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;naUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是 app 链接，也就是你和 NA 的 RD 小伙伴商量好的协议'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;iframeHtml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;iframe src=&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;naUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&quot; id=&quot;open_app&quot; width=&quot;0&quot; height=&quot;0&quot; style=&quot;border: 0;display: none;&quot;/&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;iframeHtml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;3-判断本地是否安装-app&quot;&gt;3. 判断本地是否安装 App&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;若 iframe 没有成功调起 App，则表示本地没有安装 App，那么此时页面跳转到 App 的下载页面。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;delayDownload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// 做一下延迟&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isIos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/iphone|ipad|ipod/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isIos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是你的 App 在 Appstore 中的下载链接'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是你的 App 安卓的下载地址'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;4-ios-9-和-10-利用-universal-link-调起-app&quot;&gt;4. IOS 9 和 10 利用 Universal Link 调起 App&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;在 IOS 9 和 10 中，无法利用 iframe 调起 App，可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;location.href&lt;/code&gt;直接跳转 App，但会出现两个问题：1. 当本地有 App 时，Safari 弹出&lt;code class=&quot;highlighter-rouge&quot;&gt;是否打开 App&lt;/code&gt;的弹窗，当用户两次选择&lt;code class=&quot;highlighter-rouge&quot;&gt;取消&lt;/code&gt;时，页面会跳转到苹果官网。2. 当本地无 App 时，Safari 会弹出&lt;code class=&quot;highlighter-rouge&quot;&gt;无效的链接&lt;/code&gt;的弹窗，然后才会弹出&lt;code class=&quot;highlighter-rouge&quot;&gt;是否打开 Appstore&lt;/code&gt;的弹窗，体验非常不好。因此，我们使用 Universal Link 来调起 App。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h6 id=&quot;universal-link-是什么&quot;&gt;Universal Link 是什么？&lt;/h6&gt;
+  &lt;p&gt;简单地说就是通过一个 https 的链接，完成从浏览器直接跳转到 App 或者在没安装 App 的情况下跳转到指定页面。没有是否要进入 App 的弹窗，没有微信客户端限制跳转。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;NA 端如何实现 Universal Link，可以&lt;a href=&quot;http://www.cocoachina.com/ios/20150902/13321.html&quot;&gt;查看这里&lt;/a&gt;。当你的 NA 小伙伴已经开发好后，就可以直接使用相应的协议啦。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/iPhone OS 9|iPhone OS 10/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'这里是你和 NA 小伙伴商量好的协议'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;5-切换到后台后的相关处理&quot;&gt;5. 切换到后台后的相关处理&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;当浏览器切换到后台后，我们需要清除代码中的延迟下载，以防当我们再一次返回页面后，页面跳转到 App 下载地址。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;visibilitychange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webkitvisibilitychange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;msvisibilitychange&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;blur&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callAppSuccess&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delayDownload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;clearTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delayDownload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;以上就是实现 Web 调起 App 的整个过程，正式的代码需要调整顺序，比如先做 IOS 9 和 10 的处理，这里就不赘述了。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Mar 2017 12:00:30 +0800</pubDate>
+        <link>http://localhost:4000/blog/web-call-app/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/web-call-app/</guid>
+        
+        <category>CN</category>
+        
+        <category>front-end</category>
+        
+        <category>Mobile</category>
         
         <category>JavaScript</category>
         

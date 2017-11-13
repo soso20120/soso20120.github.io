@@ -4,6 +4,7 @@
     <div class="social-wrapper text-center">
       <ul class="social-lists">
         {% if site.email %}<li><a class="social-btn btn-white" href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer" title="Mail me"><i class="fa fa-fw fa-envelope"></i></a></li>{% endif %}
+        {% if site.qq %}<li class="social-btn btn-white"><i class="fa fa-fw fa-qq"></i></li>{% endif %}
         {% if site.behance %}<li><a class="social-btn btn-white" href="https://www.behance.net/{{ site.behance }}" target="_blank" rel="noopener noreferrer" title="Follow me on Behance"><i class="fa fa-fw fa-behance"></i></a></li>{% endif %}
         {% if site.twitter %}<li><a class="social-btn btn-white" href="http://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener noreferrer" title="Follow me on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>{% endif %}
         {% if site.facebook %}<li><a class="social-btn btn-white" href="http://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener noreferrer" title="Follow me on Facebook"><i class="fa fa-fw fa-facebook"></i></a></li>{% endif %}
