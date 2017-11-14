@@ -5,3 +5,4 @@ node_modules
 .git
 .DS_Store
 Blog.xcworkspace
+_site/

@@ -44,8 +44,18 @@ $(document).ready(function () {
 		$(".page-holder-one").addClass("tab-hidden");
     $(".page-holder-three").addClass("tab-hidden");
 		$(".page-holder-two").removeClass("tab-hidden");
-
 	}
+    function showTabThree () {
+    $(".tab-three").addClass("active");
+    $(".tab-one").removeClass("active");
+    $(".tab-two").removeClass("active");
+    $(".tab-one-list").addClass("tab-hidden");
+    $(".tab-two-list").addClass("tab-hidden");
+    $(".tab-three-list").removeClass("tab-hidden");
+    $(".page-holder-one").addClass("tab-hidden");
+    $(".page-holder-two").addClass("tab-hidden");
+    $(".page-holder-three").removeClass("tab-hidden");
+  }
 })
 
 /*
