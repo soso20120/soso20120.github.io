@@ -165,7 +165,6 @@ blockquote a {
   display: inline-block;
   max-width: 75%;
   color: $light-red;
-  text-shadow: 1px 1px $dark-white, 2px 2px $darker-white;
   &:hover {
     text-shadow: 1px 1px $dark-white, 2px 2px $light-blue;
   }

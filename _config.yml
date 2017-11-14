@@ -39,29 +39,29 @@ author:
 # Social Links
 email:               huanke1303@126.com
 qq:                  qq476379555
-#google.plus:        username
-#twitter:            username
-#facebook:           username
-#github:             username
-#stackoverflow:      6438519/song-kong   #from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:           kongsong
-#xing:              username
-#instagram:          username
-#lastfm:            username
-#tumblr:            username
-#pinterest:         username
-#foursquare:        username
-#steam:             username
-#dribbble:          username
-#youtube:           username
-#soundcloud:        username
-#weibo:             username
-#flickr:            username
-#codepen:           username
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
-#behance:           username
+google.plus:        username
+twitter:            username
+facebook:           username
+github:             username
+stackoverflow:      6438519/song-kong   #from a "http://stackoverflow.com/users/123456/username" link
+linkedin:           kongsong
+xing:              username
+instagram:          username
+lastfm:            username
+tumblr:            username
+pinterest:         username
+foursquare:        username
+steam:             username
+dribbble:          username
+youtube:           username
+soundcloud:        username
+weibo:             username
+flickr:            username
+codepen:           username
+keybase:           username
+xmpp:              username@server.com
+hackernews:        username
+behance:           username
 
 # Gems
 #gems:
