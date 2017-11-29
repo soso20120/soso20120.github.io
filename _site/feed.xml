@@ -5,9 +5,50 @@
     <description>这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。主题来自于Jekyll。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Nov 2017 21:07:19 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Nov 2017 21:07:19 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Nov 2017 22:03:02 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Nov 2017 22:03:02 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>URI and URL</title>
+        <description>&lt;h3 id=&quot;what-is-uri-and-url&quot;&gt;What is URI and URL?&lt;/h3&gt;
+
+&lt;h6 id=&quot;uri--universal-resource-identifier-统一资源标志符&quot;&gt;URI = Universal Resource Identifier 统一资源标志符&lt;/h6&gt;
+&lt;p&gt; 在某一规则下能把一个资源独一无二地标识出来&lt;/p&gt;
+
+&lt;h6 id=&quot;url--universal-resource-locator-统一资源定位符&quot;&gt;URL = Universal Resource Locator 统一资源定位符&lt;/h6&gt;
+&lt;p&gt; 在某一协议下，以位置来标识&lt;/p&gt;
+
+&lt;h6 id=&quot;关系每个-url-都是-uri&quot;&gt;关系：每个 URL 都是 URI&lt;/h6&gt;
+
+&lt;p&gt;在Java类库中，URI类不包含任何访问资源的方法，它唯一的作用就是解析。&lt;/p&gt;
+
+&lt;p&gt;相反的是，URL类可以打开一个到达资源的流。但是需要协议支持，例如http，https，ftp，本地文件系统(file)和Jar文件(jar)。&lt;/p&gt;
+
+&lt;h6 id=&quot;例子&quot;&gt;例子&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;URI
+在HttpServer中，public void handle（final HttpExchange exchange）throws Exception方法，根据exchange对象可以拿到访问Http请求的URI对象&lt;br /&gt;
+ps：
+http://127.0.0.1:8080/cmd_helloworld/?name=guowuxin
+此时URI uri = exchange.getRequestURI（）；
+通过uri可以拿到连接的各部分内容： 
+uri.getPath（） ——————–&amp;gt; /cmd_helloworld 注意有斜杠
+uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 13 Jul 2017 11:21:51 +0800</pubDate>
+        <link>http://localhost:4000/blog/URI-and-URL/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/URI-and-URL/</guid>
+        
+        <category>Web</category>
+        
+        
+        <category>Web</category>
+        
+      </item>
     
       <item>
         <title>Ice Bear Jekyll Theme</title>
@@ -133,9 +174,31 @@
       </item>
     
       <item>
+        <title>git学习</title>
+        <description>&lt;h3 id=&quot;1-git的三分区&quot;&gt;1 git的三分区&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/InkedInkedgit.jpg&quot; alt=&quot;git三分区及常用命令&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Jul 2017 11:11:11 +0800</pubDate>
+        <link>http://localhost:4000/blog/git-learn/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/git-learn/</guid>
+        
+        <category>git</category>
+        
+        
+        <category>Tech</category>
+        
+      </item>
+    
+      <item>
         <title>How to use Jekyll</title>
-        <description>&lt;!-- * content
-{:toc} --&gt;
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-directory-structure---jekyll导航目录&quot; id=&quot;markdown-toc-1-directory-structure---jekyll导航目录&quot;&gt;1 Directory Structure - jekyll导航目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-_configyml&quot; id=&quot;markdown-toc-2-_configyml&quot;&gt;2 _config.yml&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#学习好难&quot; id=&quot;markdown-toc-学习好难&quot;&gt;学习好难&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;1-directory-structure---jekyll导航目录&quot;&gt;1 Directory Structure - jekyll导航目录&lt;/h3&gt;
 
@@ -180,21 +243,36 @@
 |   ├── _sass
 |   |   ├── vendor
 |   |   |   ├── font-awesome
+|   |   | 	|   ├── _font-awesome.scss [包含该文件下除_extra所有文件]
 |   |   | 	|   ├── _animated.scss
-|   |   | 	|   └── 待学习	
+|   |   | 	|   ├── _bordered-pulled.scss
+|   |   | 	|   ├── _core.scss
+|   |   | 	|   ├── _extras.scss *
+|   |   | 	|   ├── _fixed-width.scss
+|   |   | 	|   ├── _icons.scss
+|   |   | 	|   ├── _larger.scss
+|   |   | 	|   ├── _list.scss
+|   |   | 	|   ├── _mixins.scss
+|   |   | 	|   ├── _path.scss
+|   |   | 	|   ├── _rotated-flipped.scss
+|   |   | 	|   ├── _stacked.scss
+|   |   | 	|   └── _variables.scss	
 |   |   |   └── font.scss
-|   |   ├── _base.link.scss
+|   |   ├── _base.link.scss  
 |   |   ├── _base.scss
 |   |   ├── _base.text.scss
-|   |   ├── _components.img.scss
+|   |   ├── _components.img.scss *
 |   |   ├── _components.nav.scss
 |   |   ├── _components.tag.scss
 |   |   ├── _layout.scss
+|   |   ├── _syntax-highlighting.scss
+|   |   ├── _tools.mixins.scss
 |   |   ├── _settings.color.scss
-|   |   └── _待学习
+|   |   ├── _settings.fonts.scss
+|   |   └── _settings.device.scss
 |   ├── css
-|   |   └── main.cscc 
-|   ├── font-awesome     [字体文件]
+|   |   └── main.cscc    [引入各部分，除了components.img及font-awesome下其他]
+|   ├── fonts            [字体文件]
 |   ├── images           [图片]
 |   └── js
 |       ├── jPages.js
@@ -213,45 +291,50 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&quot;2-_configyml&quot;&gt;2 _config.yml&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Configuration Settings&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;Configuration Settings&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Global Configuration - 全局设定&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt; 不是很看得懂&lt;/p&gt;
+&lt;p&gt;   不是很看得懂&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Build Command Options - 关于生成站点的设置&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt; 也看不懂&lt;/p&gt;
+&lt;p&gt;   也看不懂&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Serve Command Options - 服务与发布设置&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;  1.&lt;code class=&quot;highlighter-rouge&quot;&gt;port&lt;/code&gt;：本地服务端口&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;   1.&lt;code class=&quot;highlighter-rouge&quot;&gt;port&lt;/code&gt;：本地服务端口&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;  2.&lt;code class=&quot;highlighter-rouge&quot;&gt;host&lt;/code&gt;：本地服务主机名&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;   2.&lt;code class=&quot;highlighter-rouge&quot;&gt;host&lt;/code&gt;：本地服务主机名&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;  3.&lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt;：发布url&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;   3.&lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt;：发布url&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;  4.&lt;code class=&quot;highlighter-rouge&quot;&gt;？detach&lt;/code&gt;：从终端分发服务&lt;/p&gt;
+&lt;p&gt;   4.&lt;code class=&quot;highlighter-rouge&quot;&gt;？detach&lt;/code&gt;：从终端分发服务&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Custom WEBrick Headers&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;Custom WEBrick Headers&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt; 不懂&lt;/p&gt;
+&lt;p&gt;  不懂&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Specifying a Jekyll environment at build time&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;Specifying a Jekyll environment at build time&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt; 不懂&lt;/p&gt;
+&lt;p&gt;  不懂&lt;/p&gt;
 
-&lt;h6 id=&quot;-front-matter-defaults---页面设置值&quot;&gt;* Front Matter defaults - 页面设置值&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;
+** &lt;strong&gt;&lt;em&gt;Front Matter defaults - 页面设置值&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;可以实现自定义应用区域的默认值:&lt;/p&gt;
+&lt;p&gt; 可以实现自定义应用区域的默认值:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;defaults:
  -
@@ -270,7 +353,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;当然，也可以在post或page中写新的front matter。&lt;/p&gt;
+&lt;p&gt; 当然，也可以在post或page中写新的front matter。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Predefined Gobal Variables - 预定义的全局变量&lt;/li&gt;
@@ -290,9 +373,12 @@
   &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;categories&lt;/code&gt;：分类，可以设置一个或更多&lt;/p&gt;
 
   &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tags&lt;/code&gt;：标签，也设置多个&lt;/p&gt;
+
+  &lt;p&gt;— 下的内容被识别为content&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h6 id=&quot;-default-configuration&quot;&gt;* Default Configuration&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;
+** &lt;strong&gt;&lt;em&gt;Default Configuration&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Where things are
 source:          .
@@ -314,8 +400,60 @@ keep_files:           [&quot;.git&quot;, &quot;.svn&quot;]
 encoding:             &quot;utf-8&quot;
 markdown_ext:         &quot;markdown,mkdown,mkdn,mkd,md&quot;
 strict_front_matter: false
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
+
+# Plugins
+whitelist: []
+plugins:   []
+
+# Conversion
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: &quot;\n\n&quot;
+incremental: false
+
+# Serving
+detach:  false
+port:    4000
+host:    127.0.0.1
+baseurl: &quot;&quot; # does not include hostname
+show_dir_listing: false
+
+# Outputting
+permalink:     date
+paginate_path: /page:num
+timezone:      null
+quiet:    false
+verbose:  false
+defaults: []
+liquid:
+  error_mode: warn
+
+# Markdown Processors
+rdiscount:
+  extensions: []
+redcarpet:
+  extensions: []
+kramdown:
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;h6 id=&quot;学习好难&quot;&gt;学习好难&lt;/h6&gt;
 
@@ -328,8 +466,14 @@ page-list-paginaiton文件
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
 &lt;p&gt;附上搭博客的指导：
-&lt;a href=&quot;http://www.jianshu.com/p/8f843034c7ec&quot;&gt;“授人以渔”的教你搭建个人独立博客&lt;/a&gt;&lt;/p&gt;
+&lt;br /&gt;
+1.&lt;a href=&quot;http://www.jianshu.com/p/8f843034c7ec&quot;&gt;“授人以渔”的教你搭建个人独立博客&lt;/a&gt;
+&lt;br /&gt;
+2.&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Jekyll说明文档&lt;i class=&quot;fa fa-fw fa-hand-o-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Jul 2017 11:11:11 +0800</pubDate>
         <link>http://localhost:4000/blog/how-to-use-blog/</link>

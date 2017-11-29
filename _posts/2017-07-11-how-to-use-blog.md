@@ -8,12 +8,14 @@ tags:
   - jekyll
 ---
 
-<!-- * content
-{:toc} -->
+* content
+{:toc}
 
+### 0 为什么要使用jekyll
+
+jekyll是一个静态网页生成器，它可以把markdown格式写的文章转为html网页这样的东西。
 
 ### 1 Directory Structure - jekyll导航目录
-
 
 	.
 	├── _config.yml       [配置文件，blog基本信息]
@@ -56,21 +58,36 @@ tags:
 	|   ├── _sass
 	|   |   ├── vendor
 	|   |   |   ├── font-awesome
+	|   |   | 	|   ├── _font-awesome.scss [包含该文件下除_extra所有文件]
 	|   |   | 	|   ├── _animated.scss
-	|   |   | 	|   └── 待学习	
+	|   |   | 	|   ├── _bordered-pulled.scss
+	|   |   | 	|   ├── _core.scss
+	|   |   | 	|   ├── _extras.scss *
+	|   |   | 	|   ├── _fixed-width.scss
+	|   |   | 	|   ├── _icons.scss
+	|   |   | 	|   ├── _larger.scss
+	|   |   | 	|   ├── _list.scss
+	|   |   | 	|   ├── _mixins.scss
+	|   |   | 	|   ├── _path.scss
+	|   |   | 	|   ├── _rotated-flipped.scss
+	|   |   | 	|   ├── _stacked.scss
+	|   |   | 	|   └── _variables.scss	
 	|   |   |   └── font.scss
-	|   |   ├── _base.link.scss
+	|   |   ├── _base.link.scss  
 	|   |   ├── _base.scss
 	|   |   ├── _base.text.scss
-	|   |   ├── _components.img.scss
+	|   |   ├── _components.img.scss *
 	|   |   ├── _components.nav.scss
 	|   |   ├── _components.tag.scss
 	|   |   ├── _layout.scss
+	|   |   ├── _syntax-highlighting.scss
+	|   |   ├── _tools.mixins.scss
 	|   |   ├── _settings.color.scss
-	|   |   └── _待学习
+	|   |   ├── _settings.fonts.scss
+	|   |   └── _settings.device.scss
 	|   ├── css
-	|   |   └── main.cscc 
-	|   ├── font-awesome     [字体文件]
+	|   |   └── main.cscc    [引入各部分，除了components.img及font-awesome下其他]
+	|   ├── fonts            [字体文件]
 	|   ├── images           [图片]
 	|   └── js
 	|       ├── jPages.js
@@ -87,41 +104,47 @@ tags:
 	├── LICENSE.md           [本主题的授权]
 	└── README.md            [本主题的使用须知]
 
-
+<br>
 ### 2 \_config\.yml
 
-
+<br>
 ***Configuration Settings***
 
 * Global Configuration - 全局设定
  
-&emsp;不是很看得懂
+&emsp;&emsp;&emsp;不是很看得懂
 
 * Build Command Options - 关于生成站点的设置
 
-&emsp;也看不懂
+&emsp;&emsp;&emsp;也看不懂
 
 * Serve Command Options - 服务与发布设置
 
-&emsp;&emsp;1.`port`：本地服务端口<br>
+&emsp;&emsp;&emsp;1.`port`：本地服务端口<br>
 
-&emsp;&emsp;2.`host`：本地服务主机名<br>
+&emsp;&emsp;&emsp;2.`host`：本地服务主机名<br>
 
-&emsp;&emsp;3.`baseurl`：发布url<br>
+&emsp;&emsp;&emsp;3.`baseurl`：发布url<br>
 
-&emsp;&emsp;4.`？detach`：从终端分发服务
+&emsp;&emsp;&emsp;4.`？detach`：从终端分发服务
 
+<br>
+<hr>
 ***Custom WEBrick Headers***
 
-&emsp;不懂
+&emsp;&emsp;不懂
 
+<br>
+<hr>
 ***Specifying a Jekyll environment at build time***
 
-&emsp;不懂
+&emsp;&emsp;不懂
 
-###### * Front Matter defaults - 页面设置值
+<br>
+<hr>
+** ***Front Matter defaults - 页面设置值***
 
-可以实现自定义应用区域的默认值:
+&emsp;可以实现自定义应用区域的默认值:
 
 	defaults:
 	 -
@@ -138,7 +161,7 @@ tags:
 	    layout:"project"
 	    author:"Mr.Hyde"
 
-当然，也可以在post或page中写新的front matter。
+&emsp;当然，也可以在post或page中写新的front matter。
 
 * Predefined Gobal Variables - 预定义的全局变量
 
@@ -155,8 +178,12 @@ tags:
 >`categories`：分类，可以设置一个或更多
 >
 >`tags`：标签，也设置多个
+>
+> --- 下的内容被识别为content
 
-###### * Default Configuration
+<br>
+<hr>
+** ***Default Configuration***
 
 	# Where things are
 	source:          .
@@ -179,7 +206,59 @@ tags:
 	markdown_ext:         "markdown,mkdown,mkdn,mkd,md"
 	strict_front_matter: false
 
+	# Filtering Content
+	show_drafts: null
+	limit_posts: 0
+	future:      false
+	unpublished: false
 
+	# Plugins
+	whitelist: []
+	plugins:   []
+
+	# Conversion
+	markdown:    kramdown
+	highlighter: rouge
+	lsi:         false
+	excerpt_separator: "\n\n"
+	incremental: false
+
+	# Serving
+	detach:  false
+	port:    4000
+	host:    127.0.0.1
+	baseurl: "" # does not include hostname
+	show_dir_listing: false
+
+	# Outputting
+	permalink:     date
+	paginate_path: /page:num
+	timezone:      null
+	quiet:    false
+	verbose:  false
+	defaults: []
+	liquid:
+	  error_mode: warn
+
+	# Markdown Processors
+	rdiscount:
+	  extensions: []
+	redcarpet:
+	  extensions: []
+	kramdown:
+	  auto_ids:       true
+	  entity_output:  as_char
+	  toc_levels:     1..6
+	  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+	  input:          GFM
+	  hard_wrap:      false
+	  footnote_nr:    1
+
+
+
+<br>
+<br>
+<hr>
 
 ###### 学习好难
 	
@@ -191,6 +270,10 @@ tags:
 	如何调用about。blog。projects
 
 
-
+<br>
+<hr>
 附上搭博客的指导：
-<a href="http://www.jianshu.com/p/8f843034c7ec">“授人以渔”的教你搭建个人独立博客</a>
+<br>
+1.<a href="http://www.jianshu.com/p/8f843034c7ec">“授人以渔”的教你搭建个人独立博客</a>
+<br>
+2.<a href="https://jekyllrb.com/docs/">Jekyll说明文档<i class="fa fa-fw fa-hand-o-left"></i></a>

@@ -35,10 +35,10 @@ body {
  * Set `margin-bottom` to maintain vertical rhythm
  */
 h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
+p,blockquote, pre,
 ul, ol, dl, figure,hr,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: $spacing-unit / 4;
 }
 
 
@@ -186,9 +186,6 @@ p   {
 	word-wrap: break-word;
 }
 .post-content {
-	p {
-		text-indent: 2em;
-    }
     blockquote p {
         text-indent: 0;
     }

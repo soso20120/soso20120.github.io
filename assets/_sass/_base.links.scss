@@ -2,7 +2,6 @@ a {
   font-weight: $base-font-bold;
   text-decoration: none;
   color: $light-red;
-  text-shadow:  1px 1px $dark-white ,2px 2px $darker-white;
 }
 
 blockquote a {
@@ -166,7 +165,7 @@ blockquote a {
   max-width: 75%;
   color: $light-red;
   &:hover {
-    text-shadow: 1px 1px $dark-white, 2px 2px $light-blue;
+      text-shadow:  1px 1px $dark-white ,2px 2px $darker-white;
   }
 }
 
