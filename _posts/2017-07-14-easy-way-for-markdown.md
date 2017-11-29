@@ -1,9 +1,9 @@
 ---
 layout: post 
-title: "Easy Way for Markdown"
+title: "Cmd Markdown - Easy Way for Markdown"
 date: 2017-07-14 09:02:54 +0800
 categories: [Blog]
-excerpt: Markdown是什么？它的使用示例
+excerpt: Markdown是什么？Cmd Markdown的使用实例，一个功能强大便利的在线编辑工具
 tags:
   - markdown
 ---
@@ -187,14 +187,12 @@ Bob-->Alice: I am good thanks!
 
 ------
 
-再一次感谢您花费时间阅读这份欢迎稿，点击 <i class="icon-file"></i> (Ctrl+Alt+N) 开始撰写新的文稿吧！祝您在这里记录、阅读、分享愉快！
+引用自该作者 [@ghosert][3]     
+  
 
-作者 [@ghosert][3]     
-2016 年 07月 07日    
+1.支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
 
-[^LaTeX]: 支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
-
-[^code]: 代码高亮功能支持包括 Java, Python, JavaScript 在内的，**四十一**种主流编程语言。
+2.代码高亮功能支持包括 Java, Python, JavaScript 在内的，**四十一**种主流编程语言。
 
 [1]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown
 [2]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册

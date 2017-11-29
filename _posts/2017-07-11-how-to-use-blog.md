@@ -108,7 +108,7 @@ jekyll是一个静态网页生成器，它可以把markdown格式写的文章转
 ### 2 \_config\.yml
 
 <br>
-***Configuration Settings***
+💙 Configuration Settings
 
 * Global Configuration - 全局设定
  
@@ -128,21 +128,15 @@ jekyll是一个静态网页生成器，它可以把markdown格式写的文章转
 
 &emsp;&emsp;&emsp;4.`？detach`：从终端分发服务
 
-<br>
-<hr>
-***Custom WEBrick Headers***
+💙 Custom WEBrick Headers
 
 &emsp;&emsp;不懂
 
-<br>
-<hr>
-***Specifying a Jekyll environment at build time***
+💙 Specifying a Jekyll environment at build time
 
 &emsp;&emsp;不懂
 
-<br>
-<hr>
-** ***Front Matter defaults - 页面设置值***
+🧡 Front Matter defaults - 页面设置值
 
 &emsp;可以实现自定义应用区域的默认值:
 
@@ -182,8 +176,8 @@ jekyll是一个静态网页生成器，它可以把markdown格式写的文章转
 > --- 下的内容被识别为content
 
 <br>
-<hr>
-** ***Default Configuration***
+
+🧡 Default Configuration
 
 	# Where things are
 	source:          .

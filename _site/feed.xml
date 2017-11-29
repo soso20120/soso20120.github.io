@@ -5,38 +5,571 @@
     <description>这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。主题来自于Jekyll。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Nov 2017 22:03:02 +0800</pubDate>
-    <lastBuildDate>Mon, 27 Nov 2017 22:03:02 +0800</lastBuildDate>
+    <pubDate>Wed, 29 Nov 2017 21:30:32 +0800</pubDate>
+    <lastBuildDate>Wed, 29 Nov 2017 21:30:32 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
-        <title>URI and URL</title>
-        <description>&lt;h3 id=&quot;what-is-uri-and-url&quot;&gt;What is URI and URL?&lt;/h3&gt;
+        <title>TableExport Documentation</title>
+        <description>&lt;p&gt;All could be found in &lt;a href=&quot;https://github.com/hhurz/tableExport.jquery.plugin&quot;&gt;gitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h6 id=&quot;uri--universal-resource-identifier-统一资源标志符&quot;&gt;URI = Universal Resource Identifier 统一资源标志符&lt;/h6&gt;
+&lt;p&gt;Or read &lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt; in tableExport.jquery.plugin-master
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tableexportjqueryplugin&quot;&gt;tableExport.jquery.plugin&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;export-html-table-to&quot;&gt;Export HTML Table to&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CSV&lt;/li&gt;
+  &lt;li&gt;DOC&lt;/li&gt;
+  &lt;li&gt;JSON&lt;/li&gt;
+  &lt;li&gt;PDF&lt;/li&gt;
+  &lt;li&gt;PNG&lt;/li&gt;
+  &lt;li&gt;SQL&lt;/li&gt;
+  &lt;li&gt;TSV&lt;/li&gt;
+  &lt;li&gt;TXT&lt;/li&gt;
+  &lt;li&gt;XLS   (Excel 2000 HTML format)&lt;/li&gt;
+  &lt;li&gt;XLSX  (Excel 2007 Office Open XML format)&lt;/li&gt;
+  &lt;li&gt;XML   (Excel 2003 XML Spreadsheet format)&lt;/li&gt;
+  &lt;li&gt;XML   (Raw xml)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To save the generated export files on client side, include in your html code:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;libs/FileSaver/FileSaver.min.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To export the table in XLSX (Excel 2007+ XML Format) format, you need to include additionally:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;libs/js-xlsx/xlsx.core.min.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To export the table as a PDF file the following includes are required:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;libs/jsPDF/jspdf.min.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;libs/jsPDF-AutoTable/jspdf.plugin.autotable.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To export the table in PNG format, you need to include:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;libs/html2canvas/html2canvas.min.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Regardless of the desired format, finally include:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tableExport.min.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;dependencies&quot;&gt;Dependencies&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Please keep this include order.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Library&lt;/th&gt;
+      &lt;th&gt;Version&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/jquery/jquery&quot;&gt;jQuery&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 1.9.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/hhurz/tableExport.jquery.plugin/blob/master/libs/FileSaver/FileSaver.min.js&quot;&gt;FileSaver&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 1.2.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/niklasvh/html2canvas&quot;&gt;html2canvas&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;= 0.5.0-beta4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/MrRio/jsPDF&quot;&gt;jsPDF&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;1.1.239 or 1.3.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/simonbengtsson/jsPDF-AutoTable&quot;&gt;jsPDF-AutoTable&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;2.0.14 or 2.0.17&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// CSV format&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#tableID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Excel 2000 html format&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#tableID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'excel'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// XML Spreadsheet 2003 file format with multiple worksheet support&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'table'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'excel'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;excelFileFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'xmlss'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;worksheetName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Table 1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Table 2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Table 3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// PDF export using jsPDF only&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#tableID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pdf'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;jspdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orientation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'p'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;margins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;autotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                          &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// PDF format using jsPDF and jsPDF Autotable &lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'#tableID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pdf'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;jspdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;orientation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'a3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;margins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                   &lt;span class=&quot;na&quot;&gt;autotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fillColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'inherit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                                                        &lt;span class=&quot;na&quot;&gt;textColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'inherit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                               &lt;span class=&quot;na&quot;&gt;tableWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'auto'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                                  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                          &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// PDF format with callback example&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoCellData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoBeforeAutotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AutotableSettings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'table'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fileName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sFileName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'pdf'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;jspdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bestfit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;margins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;autotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'linebreak'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+                                            &lt;span class=&quot;na&quot;&gt;tableWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wrap'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                            &lt;span class=&quot;na&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onBeforeAutotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoBeforeAutotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                                          &lt;span class=&quot;na&quot;&gt;onCellData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DoCellData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}}&lt;/span&gt;
+                       &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;options-default-settings&quot;&gt;Options (Default settings)&lt;/h2&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;consoleLog&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;csvEnclosure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&quot;'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;csvSeparator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;csvUseBOM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;displayTableName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;escape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;excelstyles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;excelFileFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'xlshtml'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;fileName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tableExport'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;htmlContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;ignoreColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;ignoreRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;jsonScope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'all'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;jspdf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;orientation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'p'&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pt'&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'a4'&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;margins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;
+                &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+                &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+                &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;onDocCreated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+       &lt;span class=&quot;nl&quot;&gt;autotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;styles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;cellPadding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;rowHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;fontSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;fillColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;textColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;fontStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'normal'&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ellipsize'&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;halign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'left'&lt;/span&gt;
+                          &lt;span class=&quot;nl&quot;&gt;valign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'middle'&lt;/span&gt;
+                  &lt;span class=&quot;nl&quot;&gt;headerStyles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;fillColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;52&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;73&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;94&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                                &lt;span class=&quot;nl&quot;&gt;textColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;
+                                &lt;span class=&quot;nl&quot;&gt;fontStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bold'&lt;/span&gt;
+                                &lt;span class=&quot;nl&quot;&gt;halign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'center'&lt;/span&gt;
+                  &lt;span class=&quot;nl&quot;&gt;alternateRowStyles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;fillColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;245&lt;/span&gt;
+                  &lt;span class=&quot;nl&quot;&gt;tableExport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+                               &lt;span class=&quot;nl&quot;&gt;onAfterAutotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+                               &lt;span class=&quot;nl&quot;&gt;onBeforeAutotable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+                               &lt;span class=&quot;nl&quot;&gt;onAutotableText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+                               &lt;span class=&quot;nl&quot;&gt;onTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+                               &lt;span class=&quot;nl&quot;&gt;outputImages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;decimalMark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt;
+               &lt;span class=&quot;nl&quot;&gt;thousandsSeparator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt;
+         &lt;span class=&quot;nl&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;decimalMark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                 &lt;span class=&quot;nx&quot;&gt;thousandsSeparator&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;onCellData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;onCellHtmlData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;onIgnoreRow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;onMsoNumberFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;outputMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'file'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;pdfmake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+         &lt;span class=&quot;nl&quot;&gt;docDefinition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;pageOrientation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'portrait'&lt;/span&gt;
+                        &lt;span class=&quot;nl&quot;&gt;defaultStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;font&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Roboto'&lt;/span&gt;
+         &lt;span class=&quot;nl&quot;&gt;fonts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;tbodySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tr'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;tfootSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tr'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;theadSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tr'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;tableName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'myTableName'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'csv'&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;worksheetName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'WorksheetName'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ignoreColumn&lt;/code&gt; can be either an array of indexes (i.e. [0, 2]) or field names (i.e. [“id”, “name”]).
+    &lt;ol&gt;
+      &lt;li&gt;Indexes correspond to the position of the header elements &lt;code class=&quot;highlighter-rouge&quot;&gt;th&lt;/code&gt; in the DOM starting at 0. (If the &lt;code class=&quot;highlighter-rouge&quot;&gt;th&lt;/code&gt; elements are removed or added to the DOM, the indexes will be shifted so use the functionality wisely!)&lt;/li&gt;
+      &lt;li&gt;Field names should correspond to the values set on the “data-field” attribute of the header elements &lt;code class=&quot;highlighter-rouge&quot;&gt;th&lt;/code&gt; in the DOM.&lt;/li&gt;
+      &lt;li&gt;“Nameless” columns without data-field attribute will be named by their index number (converted to a string)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To disable formatting of numbers in the exported output, which can be useful for csv and excel format, set the option &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers: output&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; .&lt;/li&gt;
+  &lt;li&gt;Set the option &lt;code class=&quot;highlighter-rouge&quot;&gt;excelFileFormat&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;'xmlss'&lt;/code&gt; if you want to export in XML Spreadsheet 2003 file format. Use this format if multiple tables should be exported into a single file. Excel 2000 html format is the default excel file format which has better support of exporting table styles.&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;excelstyles&lt;/code&gt; option lets you define the css attributes of the original html table cells, that should be taken over when exporting to an excel worksheet (Excel 2000 html format only).&lt;/li&gt;
+  &lt;li&gt;To export in XSLX format &lt;a href=&quot;https://github.com/protobi/js-xlsx&quot;&gt;protobi/js-xlsx&lt;/a&gt; forked from &lt;a href=&quot;https://github.com/SheetJS/js-xlsx&quot;&gt;SheetJS/js-xlsx&lt;/a&gt; is used. Please note that the implementation of this format type lets you only export table data, but not any styling information of the html table.&lt;/li&gt;
+  &lt;li&gt;For jspdf options see the documentation of &lt;a href=&quot;https://github.com/MrRio/jsPDF&quot;&gt;jsPDF&lt;/a&gt; and &lt;a href=&quot;https://github.com/simonbengtsson/jsPDF-AutoTable&quot;&gt;jsPDF-AutoTable&lt;/a&gt; resp.&lt;/li&gt;
+  &lt;li&gt;There is an extended setting for &lt;code class=&quot;highlighter-rouge&quot;&gt;jsPDF option 'format'&lt;/code&gt;. Setting the option value to &lt;code class=&quot;highlighter-rouge&quot;&gt;'bestfit'&lt;/code&gt; lets the tableExport plugin try to choose the minimum required paper format and orientation in which the table (or tables in multitable mode) completely fits without column adjustment.&lt;/li&gt;
+  &lt;li&gt;Also there is an extended setting for the &lt;code class=&quot;highlighter-rouge&quot;&gt;jsPDF-AutoTable options 'fillColor', 'textColor' and 'fontStyle'&lt;/code&gt;. When setting these option values to &lt;code class=&quot;highlighter-rouge&quot;&gt;'inherit'&lt;/code&gt; the original css values for background and text color will be used as fill and text color while exporting to pdf. A css font-weight &amp;gt;= 700 results in a bold fontStyle and the italic css font-style will be used as italic fontStyle.&lt;/li&gt;
+  &lt;li&gt;When exporting to pdf the option &lt;code class=&quot;highlighter-rouge&quot;&gt;outputImages&lt;/code&gt; lets you enable or disable the output of images that are located in the original html table.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;optional-html-data-attributes&quot;&gt;Optional html data attributes&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;(can be applied while generating the table that you want to export)&lt;/p&gt;
+
+&lt;h4 id=&quot;data-tableexport-display&quot;&gt;data-tableexport-display&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;display:none;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-display=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;always&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt; -&amp;gt; a hidden table will be exported
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;display:none;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-display=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;always&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; -&amp;gt; a hidden cell will be exported
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-display=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; -&amp;gt; this cell will not be exported
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-display=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt; -&amp;gt; all cells of this row will not be exported
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;data-tableexport-msonumberformat&quot;&gt;data-tableexport-msonumberformat&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-msonumberformat=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\@&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; 
+-&amp;gt; data value will be used to style excel cells with mso-number-format (Excel 2000 html format only)
+     Examples:
+     &quot;\@&quot;       excel treats cell content alway as text, even numbers
+     &quot;0&quot;        excel will display no decimals for numbers
+     &quot;0\.000&quot;   excel displays numbers with 3 decimals
+     &quot;0%&quot;       excel will display a number as percent with no decimals
+     &quot;Percent&quot;  excel will display a number as percent with 2 decimals
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;data-tableexport-value&quot;&gt;data-tableexport-value&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;export title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;title&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt; 
+-&amp;gt; &quot;export title&quot; instead of &quot;title&quot; will be exported
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-tableexport-value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;export content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; 
+-&amp;gt; &quot;export content&quot; instead of &quot;content&quot; will be exported
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 15 Jul 2017 22:34:05 +0800</pubDate>
+        <link>http://localhost:4000/blog/tableExport-Documentation/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/tableExport-Documentation/</guid>
+        
+        <category>Web</category>
+        
+        <category>前端</category>
+        
+        <category>Bootstrap</category>
+        
+        <category>tableExport</category>
+        
+        
+        <category>Web</category>
+        
+      </item>
+    
+      <item>
+        <title>Cmd Markdown - Easy Way for Markdown</title>
+        <description>&lt;h1 id=&quot;欢迎使用-cmd-markdown-编辑阅读器&quot;&gt;欢迎使用 Cmd Markdown 编辑阅读器&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，&lt;strong&gt;Cmd Markdown&lt;/strong&gt; 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;整理知识，学习笔记&lt;/li&gt;
+    &lt;li&gt;发布日记，杂文，所见所想&lt;/li&gt;
+    &lt;li&gt;撰写发布技术文稿（代码支持）&lt;/li&gt;
+    &lt;li&gt;撰写发布学术论文（LaTeX 公式支持）&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.zybuluo.com/static/img/logo.png&quot; alt=&quot;cmd-markdown-logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：&lt;/p&gt;
+
+&lt;h3 id=&quot;windowsmaclinux-全平台客户端&quot;&gt;&lt;a href=&quot;https://www.zybuluo.com/cmd/&quot;&gt;Windows/Mac/Linux 全平台客户端&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;请保留此份 Cmd Markdown 的欢迎稿兼使用说明，如需撰写新稿件，点击顶部工具栏右侧的 &lt;i class=&quot;icon-file&quot;&gt;&lt;/i&gt; &lt;strong&gt;新文稿&lt;/strong&gt; 或者使用快捷键 &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+Alt+N&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;什么是-markdown&quot;&gt;什么是 Markdown&lt;/h2&gt;
+
+&lt;p&gt;Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，&lt;strong&gt;粗体&lt;/strong&gt; 或者 &lt;em&gt;斜体&lt;/em&gt; 某些文字，更棒的是，它还可以&lt;/p&gt;
+
+&lt;h3 id=&quot;1-制作一份待办事宜-todo-列表&quot;&gt;1. 制作一份待办事宜 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#13-待办事宜-todo-列表&quot;&gt;Todo 列表&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[ ] 支持以 PDF 格式导出文稿&lt;/li&gt;
+  &lt;li&gt;[ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率&lt;/li&gt;
+  &lt;li&gt;[x] 新增 Todo 列表功能&lt;/li&gt;
+  &lt;li&gt;[x] 修复 LaTex 公式渲染问题&lt;/li&gt;
+  &lt;li&gt;[x] 新增 LaTex 公式编号功能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-书写一个质能守恒公式latex&quot;&gt;2. 书写一个质能守恒公式[^LaTeX]&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E=mc^2&lt;/script&gt;
+
+&lt;h3 id=&quot;3-高亮一段代码code&quot;&gt;3. 高亮一段代码[^code]&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@requires_authorization&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SomeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# A comment&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello world'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;4-高效绘制-流程图&quot;&gt;4. 高效绘制 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-流程图&quot;&gt;流程图&lt;/a&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-flow&quot;&gt;st=&amp;gt;start: Start
+op=&amp;gt;operation: Your Operation
+cond=&amp;gt;condition: Yes or No?
+e=&amp;gt;end
+
+st-&amp;gt;op-&amp;gt;cond
+cond(yes)-&amp;gt;e
+cond(no)-&amp;gt;op
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;5-高效绘制-序列图&quot;&gt;5. 高效绘制 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-序列图&quot;&gt;序列图&lt;/a&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-seq&quot;&gt;Alice-&amp;gt;Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob--&amp;gt;Alice: I am good thanks!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;6-高效绘制-甘特图&quot;&gt;6. 高效绘制 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#9-甘特图&quot;&gt;甘特图&lt;/a&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gantt&quot;&gt;    title 项目开发流程
+    section 项目确定
+        需求分析       :a1, 2016-06-22, 3d
+        可行性报告     :after a1, 5d
+        概念验证       : 5d
+    section 项目实施
+        概要设计      :2016-07-05  , 5d
+        详细设计      :2016-07-08, 10d
+        编码          :2016-07-15, 10d
+        测试          :2016-07-22, 5d
+    section 发布验收
+        发布: 2d
+        验收: 3d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;7-绘制表格&quot;&gt;7. 绘制表格&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;项目&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;价格&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;数量&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;计算机&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1600&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;手机&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$12&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;管线&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;234&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;8-更详细语法说明&quot;&gt;8. 更详细语法说明&lt;/h3&gt;
+
+&lt;p&gt;想要查看更详细的语法说明，可以参考我们准备的 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown&quot;&gt;Cmd Markdown 简明语法手册&lt;/a&gt;，进阶用户可以参考 &lt;a href=&quot;https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册&quot;&gt;Cmd Markdown 高阶语法手册&lt;/a&gt; 了解更多高级功能。&lt;/p&gt;
+
+&lt;p&gt;总而言之，不同于其它 &lt;em&gt;所见即所得&lt;/em&gt; 的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。&lt;strong&gt;Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。&lt;/strong&gt; 目前它已经成为世界上最大的技术分享网站 GitHub 和 技术问答网站 StackOverFlow 的御用书写格式。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;什么是-cmd-markdown&quot;&gt;什么是 Cmd Markdown&lt;/h2&gt;
+
+&lt;p&gt;您可以使用很多工具书写 Markdown，但是 Cmd Markdown 是这个星球上我们已知的、最好的 Markdown 工具——没有之一 ：）因为深信文字的力量，所以我们和你一样，对流畅书写，分享思想和知识，以及阅读体验有极致的追求，我们把对于这些诉求的回应整合在 Cmd Markdown，并且一次，两次，三次，乃至无数次地提升这个工具的体验，最终将它演化成一个 &lt;strong&gt;编辑/发布/阅读&lt;/strong&gt; Markdown 的在线平台——您可以在任何地方，任何系统/设备上管理这里的文字。&lt;/p&gt;
+
+&lt;h3 id=&quot;1-实时同步预览&quot;&gt;1. 实时同步预览&lt;/h3&gt;
+
+&lt;p&gt;我们将 Cmd Markdown 的主界面一分为二，左边为&lt;strong&gt;编辑区&lt;/strong&gt;，右边为&lt;strong&gt;预览区&lt;/strong&gt;，在编辑区的操作会实时地渲染到预览区方便查看最终的版面效果，并且如果你在其中一个区拖动滚动条，我们有一个巧妙的算法把另一个区的滚动条同步到等价的位置，超酷！&lt;/p&gt;
+
+&lt;h3 id=&quot;2-编辑工具栏&quot;&gt;2. 编辑工具栏&lt;/h3&gt;
+
+&lt;p&gt;也许您还是一个 Markdown 语法的新手，在您完全熟悉它之前，我们在 &lt;strong&gt;编辑区&lt;/strong&gt; 的顶部放置了一个如下图所示的工具栏，您可以使用鼠标在工具栏上调整格式，不过我们仍旧鼓励你使用键盘标记格式，提高书写的流畅度。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.zybuluo.com/static/img/toolbar-editor.png&quot; alt=&quot;tool-editor&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-编辑模式&quot;&gt;3. 编辑模式&lt;/h3&gt;
+
+&lt;p&gt;完全心无旁骛的方式编辑文字：点击 &lt;strong&gt;编辑工具栏&lt;/strong&gt; 最右侧的拉伸按钮或者按下 &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl + M&lt;/code&gt;，将 Cmd Markdown 切换到独立的编辑模式，这是一个极度简洁的写作环境，所有可能会引起分心的元素都已经被挪除，超清爽！&lt;/p&gt;
+
+&lt;h3 id=&quot;4-实时的云端文稿&quot;&gt;4. 实时的云端文稿&lt;/h3&gt;
+
+&lt;p&gt;为了保障数据安全，Cmd Markdown 会将您每一次击键的内容保存至云端，同时在 &lt;strong&gt;编辑工具栏&lt;/strong&gt; 的最右侧提示 &lt;code class=&quot;highlighter-rouge&quot;&gt;已保存&lt;/code&gt; 的字样。无需担心浏览器崩溃，机器掉电或者地震，海啸——在编辑的过程中随时关闭浏览器或者机器，下一次回到 Cmd Markdown 的时候继续写作。&lt;/p&gt;
+
+&lt;h3 id=&quot;5-离线模式&quot;&gt;5. 离线模式&lt;/h3&gt;
+
+&lt;p&gt;在网络环境不稳定的情况下记录文字一样很安全！在您写作的时候，如果电脑突然失去网络连接，Cmd Markdown 会智能切换至离线模式，将您后续键入的文字保存在本地，直到网络恢复再将他们传送至云端，即使在网络恢复前关闭浏览器或者电脑，一样没有问题，等到下次开启 Cmd Markdown 的时候，她会提醒您将离线保存的文字传送至云端。简而言之，我们尽最大的努力保障您文字的安全。&lt;/p&gt;
+
+&lt;h3 id=&quot;6-管理工具栏&quot;&gt;6. 管理工具栏&lt;/h3&gt;
+
+&lt;p&gt;为了便于管理您的文稿，在 &lt;strong&gt;预览区&lt;/strong&gt; 的顶部放置了如下所示的 &lt;strong&gt;管理工具栏&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.zybuluo.com/static/img/toolbar-manager.jpg&quot; alt=&quot;tool-manager&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通过管理工具栏可以：&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;icon-share&quot;&gt;&lt;/i&gt; 发布：将当前的文稿生成固定链接，在网络上发布，分享
+&lt;i class=&quot;icon-file&quot;&gt;&lt;/i&gt; 新建：开始撰写一篇新的文稿
+&lt;i class=&quot;icon-trash&quot;&gt;&lt;/i&gt; 删除：删除当前的文稿
+&lt;i class=&quot;icon-cloud&quot;&gt;&lt;/i&gt; 导出：将当前的文稿转化为 Markdown 文本或者 Html 格式，并导出到本地
+&lt;i class=&quot;icon-reorder&quot;&gt;&lt;/i&gt; 列表：所有新增和过往的文稿都可以在这里查看、操作
+&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt; 模式：切换 普通/Vim/Emacs 编辑模式&lt;/p&gt;
+
+&lt;h3 id=&quot;7-阅读工具栏&quot;&gt;7. 阅读工具栏&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.zybuluo.com/static/img/toolbar-reader.jpg&quot; alt=&quot;tool-manager&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通过 &lt;strong&gt;预览区&lt;/strong&gt; 右上角的 &lt;strong&gt;阅读工具栏&lt;/strong&gt;，可以查看当前文稿的目录并增强阅读体验。&lt;/p&gt;
+
+&lt;p&gt;工具栏上的五个图标依次为：&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;icon-list&quot;&gt;&lt;/i&gt; 目录：快速导航当前文稿的目录结构以跳转到感兴趣的段落
+&lt;i class=&quot;icon-chevron-sign-left&quot;&gt;&lt;/i&gt; 视图：互换左边编辑区和右边预览区的位置
+&lt;i class=&quot;icon-adjust&quot;&gt;&lt;/i&gt; 主题：内置了黑白两种模式的主题，试试 &lt;strong&gt;黑色主题&lt;/strong&gt;，超炫！
+&lt;i class=&quot;icon-desktop&quot;&gt;&lt;/i&gt; 阅读：心无旁骛的阅读模式提供超一流的阅读体验
+&lt;i class=&quot;icon-fullscreen&quot;&gt;&lt;/i&gt; 全屏：简洁，简洁，再简洁，一个完全沉浸式的写作和阅读环境&lt;/p&gt;
+
+&lt;h3 id=&quot;8-阅读模式&quot;&gt;8. 阅读模式&lt;/h3&gt;
+
+&lt;p&gt;在 &lt;strong&gt;阅读工具栏&lt;/strong&gt; 点击 &lt;i class=&quot;icon-desktop&quot;&gt;&lt;/i&gt; 或者按下 &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+Alt+M&lt;/code&gt; 随即进入独立的阅读模式界面，我们在版面渲染上的每一个细节：字体，字号，行间距，前背景色都倾注了大量的时间，努力提升阅读的体验和品质。&lt;/p&gt;
+
+&lt;h3 id=&quot;9-标签分类和搜索&quot;&gt;9. 标签、分类和搜索&lt;/h3&gt;
+
+&lt;p&gt;在编辑区任意行首位置输入以下格式的文字可以标签当前文档：&lt;/p&gt;
+
+&lt;p&gt;标签： 未分类&lt;/p&gt;
+
+&lt;p&gt;标签以后的文稿在【文件列表】（Ctrl+Alt+F）里会按照标签分类，用户可以同时使用键盘或者鼠标浏览查看，或者在【文件列表】的搜索文本框内搜索标题关键字过滤文稿，如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.zybuluo.com/static/img/file-list.png&quot; alt=&quot;file-list&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;10-文稿发布和分享&quot;&gt;10. 文稿发布和分享&lt;/h3&gt;
+
+&lt;p&gt;在您使用 Cmd Markdown 记录，创作，整理，阅读文稿的同时，我们不仅希望它是一个有力的工具，更希望您的思想和知识通过这个平台，连同优质的阅读体验，将他们分享给有相同志趣的人，进而鼓励更多的人来到这里记录分享他们的思想和知识，尝试点击 &lt;i class=&quot;icon-share&quot;&gt;&lt;/i&gt; (Ctrl+Alt+P) 发布这份文档给好友吧！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;引用自该作者 &lt;a href=&quot;http://weibo.com/ghosert&quot;&gt;@ghosert&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;1.支持 &lt;strong&gt;LaTeX&lt;/strong&gt; 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 &lt;a href=&quot;http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;MathJax&lt;/a&gt; 参考更多使用方法。&lt;/p&gt;
+
+&lt;p&gt;2.代码高亮功能支持包括 Java, Python, JavaScript 在内的，&lt;strong&gt;四十一&lt;/strong&gt;种主流编程语言。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 14 Jul 2017 09:02:54 +0800</pubDate>
+        <link>http://localhost:4000/blog/easy-way-for-markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/easy-way-for-markdown/</guid>
+        
+        <category>markdown</category>
+        
+        
+        <category>Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>URI and URL</title>
+        <description>&lt;h2 id=&quot;what-is-uri-and-url&quot;&gt;What is URI and URL?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;-uri--universal-resource-identifier-统一资源标志符&quot;&gt;🔅 URI = Universal Resource Identifier 统一资源标志符&lt;/h6&gt;
 &lt;p&gt; 在某一规则下能把一个资源独一无二地标识出来&lt;/p&gt;
 
-&lt;h6 id=&quot;url--universal-resource-locator-统一资源定位符&quot;&gt;URL = Universal Resource Locator 统一资源定位符&lt;/h6&gt;
+&lt;h6 id=&quot;-url--universal-resource-locator-统一资源定位符&quot;&gt;🔅 URL = Universal Resource Locator 统一资源定位符&lt;/h6&gt;
 &lt;p&gt; 在某一协议下，以位置来标识&lt;/p&gt;
 
-&lt;h6 id=&quot;关系每个-url-都是-uri&quot;&gt;关系：每个 URL 都是 URI&lt;/h6&gt;
+&lt;h6 id=&quot;-关系每个-url-都是-uri&quot;&gt;🔅 关系：每个 URL 都是 URI&lt;/h6&gt;
 
 &lt;p&gt;在Java类库中，URI类不包含任何访问资源的方法，它唯一的作用就是解析。&lt;/p&gt;
 
 &lt;p&gt;相反的是，URL类可以打开一个到达资源的流。但是需要协议支持，例如http，https，ftp，本地文件系统(file)和Jar文件(jar)。&lt;/p&gt;
 
-&lt;h6 id=&quot;例子&quot;&gt;例子&lt;/h6&gt;
+&lt;h6 id=&quot;-例子&quot;&gt;🔅 例子&lt;/h6&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;URI
-在HttpServer中，public void handle（final HttpExchange exchange）throws Exception方法，根据exchange对象可以拿到访问Http请求的URI对象&lt;br /&gt;
-ps：
-http://127.0.0.1:8080/cmd_helloworld/?name=guowuxin
-此时URI uri = exchange.getRequestURI（）；
-通过uri可以拿到连接的各部分内容： 
-uri.getPath（） ——————–&amp;gt; /cmd_helloworld 注意有斜杠
-uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;URI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在HttpServer中，public void handle（final HttpExchange exchange）throws Exception方法，根据exchange对象可以拿到访问Http请求的URI对象&lt;/p&gt;
+
+&lt;p&gt;ps：&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1:8080/cmd_helloworld/?name=guowuxin&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;此时URI uri = exchange.getRequestURI()；&lt;/p&gt;
+
+&lt;p&gt;通过uri可以拿到连接的各部分内容：&lt;/p&gt;
+
+&lt;p&gt;uri.getPath()——————–&amp;gt; /cmd_helloworld 注意有斜杠&lt;/p&gt;
+
+&lt;p&gt;uri.getQuery()———————-&amp;gt; name=guowuxin&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 13 Jul 2017 11:21:51 +0800</pubDate>
@@ -175,15 +708,134 @@ uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
     
       <item>
         <title>git学习</title>
-        <description>&lt;h3 id=&quot;1-git的三分区&quot;&gt;1 git的三分区&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;1-git和github的关系&quot;&gt;1 git和gitHub的关系&lt;/h3&gt;
+
+&lt;p&gt;git是一个分布式版本管理软件。&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;采用版本控制系统(VCS)可以记录项目或文件的每一个版本。它的强大之处在于你可以轻松恢复到原先的版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;集中式版本控制系统(Centralized Version Control Systems)&lt;br /&gt;
+一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。缺点是中央服务器的单点故障。&lt;/li&gt;
+    &lt;li&gt;分布式版本控制系统(Distributed Version Control System)&lt;br /&gt;
+客户端并不只提取最新版本的文件快照，而是把原始的代码仓库完整地镜像下来。这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;gitHub是一个代码托管平台。&lt;br /&gt;
+gitHub这个网站使用git这个版本管理软件来托管代码。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-git的三分区&quot;&gt;2 git的三分区&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/InkedInkedgit.jpg&quot; alt=&quot;git三分区及常用命令&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;检查当前文件状态&quot;&gt;检查当前文件状态&lt;/h6&gt;
+&lt;p&gt;可以看到被跟踪的并处于暂存的文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h6 id=&quot;查看已暂存尚未提交和未暂存的更新&quot;&gt;查看已暂存尚未提交和未暂存的更新&lt;/h6&gt;
+&lt;p&gt;此命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git diff
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h6 id=&quot;已经暂存起来的文件和上次提交时的快照之间的差异&quot;&gt;已经暂存起来的文件和上次提交时的快照之间的差异&lt;/h6&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git diff --cached
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-合并分支&quot;&gt;3 合并分支&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;有共同的祖先，但非直接上下有关系的分支&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;假如是maser分支和a分支，在master分支上&lt;code class=&quot;highlighter-rouge&quot;&gt;git merge a&lt;/code&gt;，将a分支合并到master分支。&lt;/p&gt;
+
+&lt;p&gt;也可以是&lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout a; git merge master&lt;/code&gt;，将master分支合并到a分支。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;直接上下游分支关系&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果a分支在master分支的下游，则仅仅是让a分支移动到指向master分支的记录上。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-rebase&quot;&gt;4 rebase&lt;/h3&gt;
+
+&lt;p&gt;这个方法的优势是使得平行开发的分支像是按顺序开发。&lt;/p&gt;
+
+&lt;p&gt;比如，&lt;code class=&quot;highlighter-rouge&quot;&gt;git rebase master&lt;/code&gt;可以使a分支移到master分支的上游。&lt;/p&gt;
+
+&lt;p&gt;同时，需要切换到master分支，’git rebase a’使master分支的记录移到a分支之前。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git rebase &amp;lt;branch&amp;gt;&lt;/code&gt;会先执行&lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout &amp;lt;branch&amp;gt;&lt;/code&gt;，&lt;branch&gt;分支里的每个提交(commit)都被取消掉，并且把它们临时保存为补丁(patch)(这些补丁放到&quot;.git/rebase&quot;目录中)，然后把&lt;branch&gt;分支更新到最新的master分支（即&lt;branch&gt;分支引用移动到master上），最后把保存的这些补丁应用到&lt;branch&gt;分支上。当&lt;branch&gt;分支更新之后，它会指向这些新创建的提交(commit),而那些老的提交会被丢弃。 如果运行垃圾收集命令(pruning garbage collection), 这些被丢弃的提交就会删除.&lt;/branch&gt;&lt;/branch&gt;&lt;/branch&gt;&lt;/branch&gt;&lt;/branch&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h6 id=&quot;rebase的过程&quot;&gt;rebase的过程&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/gitRebase.jpg&quot; alt=&quot;rebase时发生了什么&quot; height=&quot;410px&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;rebase和merge的区别&quot;&gt;rebase和merge的区别&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/RebaseAndMerge.jpg&quot; alt=&quot;rebase和merge的区别&quot; height=&quot;400px&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;rebase时候git做了些什么呢&quot;&gt;rebase时候，git做了些什么呢？&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;🍧 先将master分支的代码checkout出来，作为工作目录&lt;br /&gt;
+🍧 然后将a分支从master分支创建起的所有改变的补丁，依次打上。如果打补丁的过程没问题，rebase就搞定了&lt;br /&gt;
+🍧 如果打补丁的时候出现了问题，就会提示你处理冲突。处理好了，可以运行git rebase –continue继续直到完成&lt;br /&gt;
+🍧 如果你不想处理，你还是有两个选择，一个是放弃rebase过程（运行git rebase –abort），另一个是直接用test分支的取代当前分支的（git rebase –skip 这个会将引起冲突的commits丢弃）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;5-拉取代码pull-and-fetch&quot;&gt;5 拉取代码pull and fetch&lt;/h3&gt;
+
+&lt;p&gt;在合并代码前，如果远程分支与本地分支有分叉时，需要先pull，再push。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt;先获取(fetch)远程服务器的代码，再合并(merge)到本地&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git fetch&lt;/code&gt;则是获取远程分支，但不会进行合并等其他操作&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git pull --rebase&lt;/code&gt;可以在拉取代码，远程分支与本地分支有分叉时，将远程分支上改动替换当前的分支上。使用rebase代替merge，主要是不会产生merge节点。但是会很危险（更容易产生冲突）&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git merge --no--ff &amp;lt;branch&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;6分支&quot;&gt;6分支&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git branch&lt;/code&gt;查看所有分支&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git branch &amp;lt;branch&amp;gt;&lt;/code&gt;创建分支&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout &amp;lt;branch&amp;gt;&lt;/code&gt;切换分支&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;切换分支前，应注意还没有提交的修改，否则会产生冲突。原因在于切换时，git会自动的恢复工作目录到想切换的分支指针所指的commit对象的所指的整棵树的文件状态。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git chekcout -b &amp;lt;branch&amp;gt;&lt;/code&gt;创建分支并切换&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git merge &amp;lt;branch被合并的分支名&amp;gt;&lt;/code&gt;合并分支&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git branch -d &amp;lt;branch&amp;gt;&lt;/code&gt;合并且删除分支&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Jul 2017 11:11:11 +0800</pubDate>
         <link>http://localhost:4000/blog/git-learn/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/git-learn/</guid>
         
         <category>git</category>
+        
+        <category>gitHub</category>
         
         
         <category>Tech</category>
@@ -193,12 +845,17 @@ uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
       <item>
         <title>How to use Jekyll</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#0-为什么要使用jekyll&quot; id=&quot;markdown-toc-0-为什么要使用jekyll&quot;&gt;0 为什么要使用jekyll&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#1-directory-structure---jekyll导航目录&quot; id=&quot;markdown-toc-1-directory-structure---jekyll导航目录&quot;&gt;1 Directory Structure - jekyll导航目录&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-_configyml&quot; id=&quot;markdown-toc-2-_configyml&quot;&gt;2 _config.yml&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#学习好难&quot; id=&quot;markdown-toc-学习好难&quot;&gt;学习好难&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;0-为什么要使用jekyll&quot;&gt;0 为什么要使用jekyll&lt;/h3&gt;
+
+&lt;p&gt;jekyll是一个静态网页生成器，它可以把markdown格式写的文章转为html网页这样的东西。&lt;/p&gt;
 
 &lt;h3 id=&quot;1-directory-structure---jekyll导航目录&quot;&gt;1 Directory Structure - jekyll导航目录&lt;/h3&gt;
 
@@ -295,7 +952,7 @@ uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
 &lt;h3 id=&quot;2-_configyml&quot;&gt;2 _config.yml&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;Configuration Settings&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+💙 Configuration Settings&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Global Configuration - 全局设定&lt;/li&gt;
@@ -321,18 +978,15 @@ uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
 
 &lt;p&gt;   4.&lt;code class=&quot;highlighter-rouge&quot;&gt;？detach&lt;/code&gt;：从终端分发服务&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;Custom WEBrick Headers&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;💙 Custom WEBrick Headers&lt;/p&gt;
 
 &lt;p&gt;  不懂&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;Specifying a Jekyll environment at build time&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;💙 Specifying a Jekyll environment at build time&lt;/p&gt;
 
 &lt;p&gt;  不懂&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;
-** &lt;strong&gt;&lt;em&gt;Front Matter defaults - 页面设置值&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🧡 Front Matter defaults - 页面设置值&lt;/p&gt;
 
 &lt;p&gt; 可以实现自定义应用区域的默认值:&lt;/p&gt;
 
@@ -377,8 +1031,9 @@ uri.getQuery（）———————-&amp;gt; name=guowuxin&lt;/li&gt;
   &lt;p&gt;— 下的内容被识别为content&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;
-** &lt;strong&gt;&lt;em&gt;Default Configuration&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;🧡 Default Configuration&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Where things are
 source:          .
