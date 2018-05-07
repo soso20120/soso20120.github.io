@@ -8,6 +8,12 @@ tags:
   - markdown
 ---
 
+# Content
+
+* content
+{:toc}
+
+
 # 欢迎使用 Cmd Markdown 编辑阅读器
 
 ------
@@ -56,6 +62,43 @@ if __name__ == '__main__':
     # A comment
     print 'hello world'
 ```
+
+### 支持高亮代码的语言
+
+名称|关键字|调用的js|说明
+----|----|----|----
+AppleScript|applescript|shBrushAppleScript.js|
+ActionScript 3.0|actionscript3 , as3|shBrushAS3.js|
+Shell|bash , shell|shBrushBash.js|
+ColdFusion|coldfusion , cf|shBrushColdFusion.js|
+C|cpp , c|shBrushCpp.js|
+C#|c# , c-sharp , csharp|shBrushCSharp.js|
+CSS|css|shBrushCss.js|
+Delphi|delphi , pascal , pas|shBrushDelphi.js|
+diff&patch|diff patch|shBrushDiff.js|用代码版本库时,遇到代码冲突,其语法就是这个
+Erlang|erl , erlang|shBrushErlang.js|
+Groovy|groovy|shBrushGroovy.js|
+Java|java|shBrushJava.js|
+JavaFX|jfx , javafx|shBrushJavaFX.js|
+JavaScript|js , jscript , javascript|shBrushJScript.js|
+Perl|perl , pl , Perl|shBrushPerl.js|
+PHP|php|shBrushPhp.js|
+text|text , plain|shBrushPlain.js|就是普通文本
+Python|py , python|shBrushPython.js|
+Ruby|ruby , rails , ror , rb|shBrushRuby.js|
+SASS&SCSS|sass , scss|shBrushSass.js|
+Scala|scala|shBrushScala.js|
+SQL|sql|shBrushSql.js|
+Visual Basic|vb , vbnet|shBrushVb.js|
+XML|xml , xhtml , xslt , html|shBrushXml.js|
+Objective C|objc , obj-c|shBrushObjectiveC.js|
+F#|f# f-sharp , fsharp|shBrushFSharp.js|
+|xpp , dynamics-xpp|shBrushDynamics.js|
+R|r , s , splus|shBrushR.js|
+matlab|matlab|shBrushMatlab.js|
+swift|swift|shBrushSwift.js|
+GO|go , golang|shBrushGo.js|
+
 
 ### 4. 高效绘制 [流程图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-流程图)
 

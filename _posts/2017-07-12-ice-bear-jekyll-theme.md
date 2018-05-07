@@ -8,12 +8,16 @@ tags:
   - jekyll
   - front-end
 ---
-This is my first jekyll theme decorated by my favorite items -- blue and ice bear. It's welcomed to give me a star at github if you like it.
 
-<a class="github-button" href="https://github.com/songkong/Blog/tree/gh-pages" data-count-href="/songkong/Blog/stargazers" data-count-api="/repos/songkong/Blog#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star songkong/Blog on GitHub">Star</a>
+# Content
+
+* content
+{:toc}
 
 # Installation
 ---
+
+This is my first jekyll theme decorated by my favorite items -- blue and ice bear. It's welcomed to give me a star at github if you like it.<a class="github-button" href="https://github.com/songkong/Blog/tree/gh-pages" data-count-href="/songkong/Blog/stargazers" data-count-api="/repos/songkong/Blog#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star songkong/Blog on GitHub">Star</a>
 
 * Fork the repository. <a class="github-button" href="https://github.com/songkong/Blog/fork" data-count-href="/songkong/Blog/network" data-count-api="/repos/songkong/Blog#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork songkong/Blog on GitHub">Fork</a>
 * Edit `_config.yml` file.
@@ -29,6 +33,10 @@ This is my first jekyll theme decorated by my favorite items -- blue and ice bea
 ---
 
 _italic_. **bold**. ***italic and bold***. ~~delete line~~. [link](http://kongsong.me).
+
+```
+_italic_. **bold**. ***italic and bold***. ~~delete line~~. [link](http://kongsong.me).
+```
 
 # Heading 1
 
