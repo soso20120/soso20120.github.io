@@ -24,7 +24,7 @@ Mat pic1 = imread("1.jpg");
 pic1.at<cv::Vec3b>(i, j)[0] = 0;
 ```
 
-[类型参考该文章](http://)
+[类型参考该文章](https://soso20120.github.io/blog/opencv-mat/)
 
 <br>
 ### 2 ptr指针
