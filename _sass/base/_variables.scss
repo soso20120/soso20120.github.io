@@ -1,0 +1,40 @@
+//color picker tool
+//https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Colors/Color_picker_tool
+
+// Typography 活版印刷
+$font-family-main: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-family-headings: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$font-size: 1.25em;
+
+// Padding 填充
+$padding-large: 20%;
+$padding-small: 5%;
+$padding-x-small: 3%;
+
+// Brand colours 标题颜色
+$brand-color: #fff; //white
+$background-color: #fff;
+$border-color: rgba(0, 0, 0, 0.1); // rgba recommended if using feature images
+
+// Typography colours 字体颜色
+$text-color: #383838; //black
+$link-color: #1ABC9C; //green
+$selection-color: #D4D4D4; //light gray// visible when highlighting text 
+
+// Tags color 标签颜色
+$tags-color: #b0b0b0; //gray
+
+//Search color 
+$search-color: #999; //gray
+
+// Header colours 题头颜色
+$header-link-color: #383838;
+
+// Feature image for articles 通过"img/PATH_TO_IMAGE.png"加图片
+$feature-image-text-color: #fff;
+$feature-image-size: cover; // options include "cover", "contain", "auto"
+
+// Header description box
+$header-desc-background-color: #1ABC9C;
+$header-desc-text-color: #FFF;
+$header-desc-link-color: #02453D;

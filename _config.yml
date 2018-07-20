@@ -1,73 +1,85 @@
-#Site
-title: SUNNY的白熊部落
-description: 这是SUNNY MEI的剥壳机，正在不停的学习中，以后将会成为大佬。主题来自于Jekyll。
-logo: favicon.png
-url: soso20120.github.io
-#rss_url: /feed.xml
+# SITE CONFIGURATION
+baseurl: "/"
+url: "https://soso20120.github.io/"
 
-# Jekyll
-permalink:          /blog/:title/
-markdown:           kramdown
-highlighter:        rouge
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
+# THEME-SPECIFIC CONFIGURATION
+theme_settings:
+  # Meta
+  title: Sunny
+  avatar: 
+  favicon: 
+  gravatar: # Email MD5 hash
+  description: "To be updated" # used by search engines
+
+  # Header and footer text
+
+  header_text: >
+     <p>Just for everyday learning record. To be updated.</p>
+  header_text_feature_image:
+  footer_text: >
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+
+  # Icons
+  rss: true
+  email_address: # Full email address, e.g. "sam@example.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: 
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter: 
+  wordpress:
+  youtube:
+
+  # Scripts
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: true # Enable if using math markup
+  search: true # Enable the search feature
+
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+  str_search_no_results: "No results found."
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss" 
+  # to change colours, typography and padding used in the theme with CSS.
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: false
+
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
 sass:
-  sass_dir:         assets/_sass
-  style:            compressed
-
-# Comment
-comment:
-  disqus: Sunny    
-  # duoshuo: kongsong
-  # youyan: 2122392
-  laibili: MTAyMC8yODgzNC81NDA0
-
-# Website analytics
-google_analytics: UA-82494501-1
-baidu_analytics: 5b31ffbbdc6cff18727f3adf75a03777    #from //hm.baidu.com/hm.js?***
-
-# Author information:
-author:
-  # resume: /resume
-  name: Sunny     #the name of Blog section
-  about_me: 这是SUNNY的BLOG，分享计算机的学习过程。有什么问题或者没有，都欢迎与我交流。
- 
-# Social Links
-email:               huanke1303@126.com
-qq:                  qq476379555
-google.plus:        username
-twitter:            username
-facebook:           username
-github:             username
-stackoverflow:      6438519/song-kong   #from a "http://stackoverflow.com/users/123456/username" link
-linkedin:           kongsong
-xing:              username
-instagram:          username
-lastfm:            username
-tumblr:            username
-pinterest:         username
-foursquare:        username
-steam:             username
-dribbble:          username
-youtube:           username
-soundcloud:        username
-weibo:             username
-flickr:            username
-codepen:           username
-keybase:           username
-xmpp:              username@server.com
-hackernews:        username
-behance:           username
-
-# Gems
-#gems:
-#  - jekyll-feed
-#  - jekyll-sitemap
-#  - jekyll-gist
-
-# Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile,.sass-cache,.DS_Store,.idea]
+  sass_dir: _sass
+  style: :compressed
+plugins: [jekyll-paginate]
+theme: jekyll-theme-type
+exclude:
+  - Gemfile
+  - Gemfile.lock
