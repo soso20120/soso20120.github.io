@@ -20,7 +20,7 @@ theme_settings:
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
   # Icons
-  rss: true
+  rss: false
   email_address: # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
@@ -46,7 +46,7 @@ theme_settings:
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
   katex: true # Enable if using math markup
-  search: true # Enable the search feature
+  search: false # Enable the search feature
 
   # Localization strings
   str_follow_on: "Follow on"
@@ -83,3 +83,7 @@ theme: jekyll-theme-type
 exclude:
   - Gemfile
   - Gemfile.lock
+  - .gitattributes
+  - .gitignore
+  - LICENSE
+  - REDAME.md

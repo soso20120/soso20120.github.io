@@ -43,3 +43,22 @@ a.button {
 .disabled {
   opacity: 0.7;
 }
+
+//tooltip悬浮提示标签
+.tooltip {
+  position:relative;
+  color: #1ABC9C;
+  text-decoration: none;
+}
+.tooltip:hover:before {
+  position:absolute;
+  top:30px;
+  content:attr(titles); //使用自带title，无法隐藏默认的
+  width:max-content;
+  color:#fff;
+  background-color:#383838;
+  border:1px solid #999;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
