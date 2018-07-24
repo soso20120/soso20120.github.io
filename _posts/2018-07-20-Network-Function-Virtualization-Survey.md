@@ -43,7 +43,7 @@ EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网�
 
 图3右则展示了EPC虚拟化的架构。这种方式更灵活、动态调整，做出更改更容易也更便宜。而且还可以更简单的软件升级，更快地革新。
 
- ![NFV applied in EPC]({{ site.baseurl }}/assets/img/)
+ ![NFV applied in EPC](/assets/img/nfv-applied-in-epc.JPG)
 
 #### 未解决的问题
 * 实施是否转化为最初预期的好处。
@@ -58,9 +58,9 @@ EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网�
 ### 2. NFV架构及局限性
 由ETSI提出
 
- ![NFV architecture proposed by ETSI]({{ site.baseurl }}/assets/img/)
+ ![NFV architecture proposed by ETSI]({{ site.baseurl }}/assets/img/NFV-architeture-proposed-by-ETSI.JPG)
 
-#### <span class="tooltip" titles="Network Funciton Virtualization Infrastructure">NFVI</span>
+#### <span class="tooltip" titles="Network Funciton Virtualization Infrastructure 基础设施">NFVI</span>
 * NFVI是硬件和软件的结合，**构成了部署VNFs的环境**。
 * **物理资源**
 	1. 商业现货（COTS）计算硬件
@@ -71,7 +71,7 @@ EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网�
 		*  **虚拟节点**是具有托管或路由功能的软件组件，例如封装在VM中的操作系统
 		* **虚拟链路**是两个虚拟节点的逻辑互连，它们作为具有动态变化属性的直接物理链路出现。
 
-#### <span class="tooltip" titles="Virtual Network Fuction and Services">VNFs</span>
+#### <span class="tooltip" titles="Virtual Network Fuction and Services 虚拟网络功能">VNFs</span>
 * 一个网络功能是网络基础设施中的功能块，有定义好的外部接口和功能。
 * NF的实例：网关，DHCP，防火墙等。
 * VNF部署在VM这样的虚拟资源上。
@@ -88,7 +88,13 @@ EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网�
 * 还没有VNF，基础设施，MANO的最佳实践和参考实现，以及所需接口的详细定义。
 * 供应商之间的看法不统一，应尽早解决接口定义等问题。
 
-### 3. 商业模型及重要的设计因素
+### 3. 商业模式及设计注意事项
+
+#### <span class="tooltip" titles="Infrastructure Provider 基建供应商">InP</span>
+
+
+
+
 
 ### 4. NFV与SDN和云计算的关机
 
