@@ -7,7 +7,7 @@ tags:
 
 ---
 
-### 1. Introduction
+## 1. Introduction
 
 #### 背景：
 * 目前的网络功能实现都是依靠特定的设备，而且服务组件有严格的连接。
@@ -36,7 +36,7 @@ tags:
 
 图2中基于NFV实现的案例，CPE的功能由ISP处的一个共享的基础设施实现。基于上述场景，在ISP中就能简单更新DHCP，或者为一部分人或所有人增加父母监控的功能。不仅节约操作费用，而且大规模应用下，CPE也能更便宜。
 
- ![NFV applied in CPE]({{ site.baseurl }}/assets/img/nfv-applied-in-cpe.JPG)
+![NFV applied in CPE](/assets/img/nfv-applied-in-cpe.JPG)
 
 ##### 2.应用于<span class="tooltip" titles="Evolved Packet Core Network 分组核心网">EPC</span>
 EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网络。图3左展示了LTE的基本架构。<span class="tooltip" titles="User Equipment">UE</span>通过E-UTRAN连接到EPC。EPC执行基本功能，包括用户跟踪，移动性管理和会话管理。由四个部分组成：<span class="tooltip" titles="Serving Gateway">S-GW</span>，<span class="tooltip" titles="Packet Data Network Gateway">P-GW</span>，<span class="tooltip" titles="Mobility Management Entity">MME</span>，<span class="tooltip" titles="Policy and Charging Rules Function">PCRF</span>。并且EPC还连接到外部网络，外部网络可以包括<span class="tooltip" titles="IP Multimedia Core Netword Subsystem IP多媒体核心网子系统">IMS</span>。目前EPC的所有功能都是基于专有设备。所以微小的改动都需要更换设备。
@@ -50,15 +50,15 @@ EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网�
 * 有一些重要且未开发的研究挑战需要解决，例如测试和验证，资源管理，互操作性，实例化，VNF的性能等。
 * 即使是正在探索的领域，如MANO，仍然存在悬而未决的问题，特别是在支持异质性方面。
 
-**目前文献的局限性：**
+目前文献的局限性：
 * 在范围方面，他们没有考虑NFV的重要方面，例如它与SDN和云计算的关系。
 * 对标准化活动进行有限的审查和分析。
 * 对正在进行的研究和挑战的不完整的描述。
 
-### 2. NFV架构及局限性
+## 2. NFV架构及局限性
 由ETSI提出
 
- ![NFV architecture proposed by ETSI]({{ site.baseurl }}/assets/img/NFV-architeture-proposed-by-ETSI.JPG)
+![NFV architecture proposed by ETSI](/assets/img/NFV-architeture-proposed-by-ETSI.JPG)
 
 #### <span class="tooltip" titles="Network Funciton Virtualization Infrastructure 基础设施">NFVI</span>
 * NFVI是硬件和软件的结合，**构成了部署VNFs的环境**。
@@ -88,24 +88,184 @@ EPC是<span class="tooltip" titles="Long Term Evolution">LTE</span>的核心网�
 * 还没有VNF，基础设施，MANO的最佳实践和参考实现，以及所需接口的详细定义。
 * 供应商之间的看法不统一，应尽早解决接口定义等问题。
 
-### 3. 商业模式及设计注意事项
+## 3.A 商业模式
+
+![proposed-nfv-business-model](/assets/img/proposed-nfv-business-model.JPG)
 
 #### <span class="tooltip" titles="Infrastructure Provider 基建供应商">InP</span>
 
+* InP以数据中心和物理网络的形式部署和管理物理资源，并且决定如何将可用资源分配给TSP。
+* 可以通过编程接口向一个或多个TSP提供和租用虚拟资源。
+* 在NFV中，InP的示例可以是公共数据中心，例如亚马逊的公共数据中心，或TSP拥有的私人服务器。
 
+#### TSP
 
+* TSP从一个或多个InP租用资源运行VNF，并且确定这些功能的链接。
+* TSP也可以将虚拟资源分租给其他TSP，此时它的角色是InP。
+* 在InP是私有或内部的情况下，例如由TSP网络节点或服务器提供，则InP和TSP可以是一个实体。
 
+#### <span class="tooltip" titles="VNF Providers">VNFPs</span>和<span class="tooltip" titles="Server Providers 服务器提供商">SPs</span>
 
-### 4. NFV与SDN和云计算的关机
+* 传统网络设备供应商被分为两个部分：VNFP和SP。
+* VNFP是为NF提供软件实现。它可以直接提供给TSP，也可以提供给InP。
+* TSP开发自己的NF（软件）的情况下，VNFP和TSP将是一个实体。
+* SP提供可以部署VNF的行业标准服务器。
+* 服务器提供给InP时，功能将在云中运行；提供给TSP时，功能在TSP的网络节点中运行。
+* 分开的好处是，TSP可以从一个实体购买VNF，从另一个实体购买服务器。
+
+#### Brokers代理
+
+* 当TSP从多个VNFP购买功能，或将多个InP资源部署到端到端的服务，需要代理人的角色。
+* 代理的作用就是：已知资源和需求的情况下，协调、汇总资源（InP、VNFP、SP），再提供给TSP。
+* 此角色仅包含在完整性模型中，因为在NFV生态系统的所有情况下可能不需要此角色。
+
+#### 最终用户
+
+* 最终用户是服务的最终消费者。
+* 用户可以连接到多个TSP，以获得不同的服务。
+
+## 3.B 设计注意事项
+
+#### 性能
+
+* NFV架构应该能够实现类似于在专用上运行的功能所获得的性能。
+* 由于处理器卸载技术（例如数据移动的直接存储器访问和用于CRC的硬件辅助），需要与高带宽、低延迟的接口连接。
+* 还有一些VNF需要由NFVI提供的硬件加速（例如<span class="tooltip" titles="Deep Packet Inspection 深度报文检测">DPI</span>）。
+* 已有一些研究利用<span class="tooltip" titles="Data Plane Development Kits 数据平面开发套件">DPDKs</span>运行VNF，进行小型和大型的分组处理，性能接近原生非虚拟的。
+* 也有研究证明FPGA可以提高VNF的性能。
+
+#### 安全性和适应性
+
+* NFV的动态性质要求安全技术，政策，流程和实践嵌入其遗传结构中。
+* 来自不同订购者的功能或服务应相互保护/隔离，使它们不会对方的漏洞相互影响。
+* 应保护NFVI不受所提供的订购服务的影响，可以通过防火墙实现。
+* 相同服务的功能不应由同一安全域的物理资源托管。
+
+#### 可靠性和可用性
+
+* 电信业中，由于监管的需求，需要毫秒级的响应。
+* 但是不是所有功能都要求高，比如电话对可用性要求最高，短信服务则较低。
+* 可以定义多个可用性类，由NFV框架支持。
+* 可以部署具有冗余的功能。
+
+#### 支持异质性
+
+* 任何NFV平台必须是开放共享环境，能够运行来自不同供应商的应用程序。
+* InP必须能自由的做出硬件选择决策，更换硬件供应商并处理异构硬件。
+* 平台应该能够屏蔽VNF与底层网络技术的细节（例如，光学，无线，传感器等）。
+* 平台应该允许，不受限制地在多个基础结构域上创建端到端服务，并且不需要特定的解决方案。
+* 用户应该可以从当前的TSP或其它已覆盖的TSP中自由选择服务，
+
+#### 支持旧版
+
+* 完成NFV转向需要过渡时间，因此需要既能物理的，也能支持虚拟NF。
+* InP必须能够在虚拟化和物理环境中运行网络功能。
+
+#### 可扩展性和自动化
+
+* 所有功能都能自动化的情况下，NFV才会扩展。比如，目前都是通过VM实现VNF。如果每个NFV都部署一个VM，不仅占空间大、成本高，还会导致虚拟化层的可伸缩问题。
+* 对动态环境的需求要求可以按需部署和删除VNF，并进行扩展以匹配不断变化的流量。
+
+## 4. NFV与SDN与云计算
+
+#### 云计算
+
+云计算中，服务提供分为两个部分：
+* <span class="tooltip" titles="infrastructure providers">基础设施提供者</span>：管理云平台，根据基于使用的定价模型租赁资源
+* <span class="tooltip" titles="service providers">服务提供者</span>：从一个或多个基础设施提供商处租用资源来为最终用户提供服务
+
+**特点**
+* 按需自助服务：消费者提出需求的计算能力，如服务器时间和网络存储，无需人工交流。
+* 广泛的网络访问：允许不同平台的客户机访问。
+* 资源池：按消费者需求动态分配不同的物理和虚拟资源。
+* 快速弹性：根据需求快速向内和向外扩展。
+* 测量服务：云系统通过在适合于服务类型（例如，存储，处理，带宽和活动用户帐户）的某种抽象级别上利用计量能力来自动控制和优化资源使用。
+
+**服务模型**
+* <span class="tooltip" titles="Software as a Service 软件即服务">SaaS</span>：可以通过瘦客户机访问云上的应用程序。
+* <span class="tooltip" titles="Platform as a Service 平台即服务">PaaS</span>：提供用户应用程序的运行环境，但是用户只能使用云提供编程语言、库、服务和工具。
+* <span class="tooltip" titles="Infrastructure as a Service 基础架构即服务">IaaS</span>：将硬件设备等基础资源封装成服务供用户使用。
+
+![cloud-service-model-and-mapping-to-nfv](/assets/img/cloud-service-model-and-mapping-to-nfv.JPG)
+
+**云计算与NFV的关系**
+* 由于NFV起源于电信业，且在电信业中发展更好。接下来都在运营级网络讨论。
+* 目前NFV的早期实现是基于在云中的专用VM上部署功能。
+* 在云中部署NF可能会改变服务和应用程序开发和交付方式的各个方面。
+* 电信网络在以下三个方面与云计算环境不同：
+	1. 电信网络的数据平面工作负载更高，需要更高的性能。
+	2. 电信网络的拓扑结构对网络提出了严苛的要求。
+	3. 电信行业需要可扩展性，可靠性和可用性。
+
+![comparison-of-nfv-and-cloud](/assets/img/comparison-of-nfv-and-cloud.JPG)
+
+**现有基于云的NFV的研究**
+* OpenStack虽然被确定为基于云的NFV架构的组件之一，但它不提供包括服务质量（QoS）要求在内的网络资源的详细描述，也不支持资源预留服务，因此不提供任何资源预留接口。
+* OpenANFV提出了一种基于OpenStack的框架，使用硬件加速来增强VNF的性能。
+
+#### <span class="tooltip" titles="Software Defined Networking 软件定义网络">SDN</span>
+
+SDN解耦网络控制和转发功能，允许网络控制通过开放接口直接可编程。它能简化网络管理。
+
+**特点**
+* 可编程的：由于控制与转发功能分离，是网络控制可编程。该特性可用于自动化网络配置。
+* 敏捷：管理员可以动态调整网络范围的流量以满足不断变化的需求。并且该逻辑在软件中实现，发布周期更短。
+* 集中管理：SDN控制器维护网络的全局视图。
+* 基于开放标准和供应商中立：通过开放标准实施时，SDN简化了网络设计和操作。
+
+**SDN和NFV的关系**
+* 与NFV旨在在行业标准硬件上运行NF的方式相同，SDN控制平面可以实现为在行业标准硬件上运行的纯软件。
+* NFV和SDN可能是高度互补的，可以将它们组合在一个网络解决方案中。比如，SDN控制器可以成为服务的一部分链。这意味着SDN中的控制和管理程序（如负载平衡、监控和流量分析）可以实现为VNF。同样，SDN可以通过提供灵活，自动化的链接功能，配置和配置网络连接和带宽，操作自动化，安全性和策略控制来加速NFV部署。（未证实）
+* SDN和NFV是不同的概念，旨在解决软件驱动的网络解决方案的不同方面。
+* NFV的目标是将NF与专用硬件元件解耦；而SDN则侧重于将数据包和连接的处理与整体网络控制分开，虚拟化是将抽象资源分配给特定客户端或应用程序。
+* NFV可以在现有网络上工作，而SDN需要一个新的网络结构，它的数据和控制平面是分开的。
+
+![comparison-of-nfv-and-sdn](/assets/img/comparison-of-nfv-and-sdn.JPG)
+
+**现有基于SDN的NFV的研究**
+NFV的独特需求可能需要一个大规模复杂的转发平面，将虚拟和物理设备与广泛的控制和应用软件相结合，主要从两个方面改进SDN：
+* the Sounthbound API(OpenFlow):
+	1. OpenFlow是SDN南向API的事实上的实现，但它并不是一个成熟的解决方案。因为Open-Flow针对L2-L4流程处理，所以它没有应用层协议支持和面向交换机的流量控制。因此，用户必须为上层流控制安排附加机制。所以，必须扩展OpenFlow以包括能够支持NFV的层L5-L7。
+	2. 在虚拟EPC功能的实现中，通过定义虚拟端口来扩展OpenFlow1.2，实现封装和使用GTP隧道端点标识符（TEID）进行流路由。
+	3. OpenFlow的部署仍依赖于单个控制器。扩展性差，可靠性差。因此，需要通过分布式架构来改进SDN。
+
+* 控制器设计
+	1. OpenNF提出了一种控制平面，它允许在NF实例集合中重新分配数据包处理，并在每个NF和控制器之间提供通信路径，以进行配置和决策。它使用事件和转发更新的组合来解决竞争条件，绑定开销以及适应各种NF。另外，有人设计了一个协议实现VNF和控制器之间的通信。*<font color="gray" size="1">J. Batalle, J. Ferrer Riera, E. Escalona, and J. Garcia-Espin, “On the Implementation of NFV over an OpenFlow Infrastructure: Routing Function Virtualization,” in Future Networks and Services (SDN4FNS), 2013 IEEE SDN for, Nov 2013, pp. 1–6.</font>*最后还有人提出了同时考虑SDN和NFV的架构。*<font color="gray" size="1">M. R. Sama, L. M. Contreras, J. Kaippallimalil, I. Akiyoshi, H. Qian, and H. Ni, “Software-defined control of the virtualized mobile packet core,” Communications Magazine, IEEE, vol. 53, no. 2, pp. 107–115, Feb 2015.</font>*
+	2. OpenDaylight是在单一控制平台中支持广泛地集成技术的SDN控制平台。它是开源的。OpenDaylight计划的目标是通过开源SDN和NFV解决方案为可编程性和控制创建参考框架。
+
+![relationship-between-nfv-sdn-cloud](/assets/img/relationship-between-nfv-sdn-cloud.JPG)
 
 ### 5. NFV的主要项目和早期实现、用例、商业产品
 
+#### 标准化工作
+* IETF服务功能链接工作组：因为服务中的功能都有严格的链接和顺序要求，放入云中前必需考虑这点。IETF SFC WG工作组旨在为服务功能链建立框架。
+* IRTF NFV研究组：该小组的目的是在主要会议上组织会议和研讨会，并邀请知名出版物的特刊，共同研究NFV相关的问题。
+* ATIS NFV论坛：由一家北美电信标准组织创建，该小组旨在开发NFV的规范，重点关注NFV的各个方面，包括运营商间的互操作性以及新的服务描述和自动化流程。
+* Broadband论坛：致力于开发宽带网络规范的行业联盟。正在研究如何在多业务宽带网络中实施NFV。
+
+![summary-of-nfv-standardizaiton-efforts](/assets/img/summary-of-nfv-standardizaiton-efforts.JPG)
+
+#### 协作NFV项目
+* <span class="tootip" titles="Zero-time Orchestration, Operations and Management 零时间编排，运营和管理">Zoom：</span>一个TM论坛项目，旨在定义实现VNF交付和管理所必需的运营环境，并确定将保护NFVI和VNF的新安全方法。
+
+![summary-of-nfv](/assets/img/summary-of-nfv.JPG)
+
+#### 实现
+
+![summary-of-nfv-implementations](/assets/img/summary-of-nfv-implementations.JPG)
+
 ### 6. Future Exploration
 
-### 7. 总结
+#### 管理和编排
 
+* NFV的部署要求改变现有的管理系统，使现有的功能都在连贯的基础上实例化，并确保方案仍可管理。
+* 克莱曼等描述了一种基于协调器的体系结构，该体系结构确保虚拟节点的自动放置以及由它们收集和报告资源行为的监视系统支持的网络服务的分配。
+* 目前的方案并没有结合SDN和NFV的要求。
 
+#### 能源效率
 
+#### 
+ 
 
 
 
