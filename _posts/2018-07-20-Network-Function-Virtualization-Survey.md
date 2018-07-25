@@ -235,7 +235,7 @@ NFV的独特需求可能需要一个大规模复杂的转发平面，将虚拟�
 
 ![relationship-between-nfv-sdn-cloud](/assets/img/relationship-between-nfv-sdn-cloud.JPG)
 
-### 5. NFV的主要项目和早期实现、用例、商业产品
+## 5. NFV的主要项目和早期实现、用例、商业产品
 
 #### 标准化工作
 * IETF服务功能链接工作组：因为服务中的功能都有严格的链接和顺序要求，放入云中前必需考虑这点。IETF SFC WG工作组旨在为服务功能链建立框架。
@@ -254,7 +254,7 @@ NFV的独特需求可能需要一个大规模复杂的转发平面，将虚拟�
 
 ![summary-of-nfv-implementations](/assets/img/summary-of-nfv-implementations.JPG)
 
-### 6. Future Exploration
+## 6. Future Exploration
 
 #### 管理和编排
 
@@ -264,10 +264,48 @@ NFV的独特需求可能需要一个大规模复杂的转发平面，将虚拟�
 
 #### 能源效率
 
-*云在节省能源方面有巨大的潜力
+* 基于NF的云在节省能源方面有巨大的潜力
+* 但应该在节能和性能之间做决策
 
-#### 
- 
+#### NFV性能
+
+* ETSI的专项组证明，如果遵循最佳实践，不仅可以实现高性能，还是可预测的。
+* 但有一些高性能NF可能难以虚拟化而且不会降低性能，虽然考虑硬件加速的解决方案，但是这违背了NFV的灵活性的理念。
+* 对NFV进行分阶段迁移也是合适的，其中具有可接受性能的那些功能首先被虚拟化并且允许与非虚拟化或物理性功能一起运行。
+
+#### 资源分配
+
+* 需要有效的算法决定哪个物理资源部署哪个网络功能，能将一个功能移到另一个服务器，以实现负载平衡、节能、恢复等。
+* 根据Mehraghdam的研究，在网络受限的情况下，应根据目标来部署功能。但这是一个NP-hard的优化问题。
+* NFV系统应允许将一个或一组VNF迁移到不同的物理服务器。此时不仅要考虑效率，还要综合的管理。
+* 不应该一个功能放在一个VM上，有的功能很轻，有的则无须隔离。可以考虑使用容器。
+* 即使给定的功能必须在VM的操作系统中使用相同的资源，也可以使用调度技术来允许功能共享资源。
+
+#### 安全，隐私和信任
+
+* ETSI的安全专项组确认NFV存在一些安全问题。它们也提出了一些解决方案，但是并不详尽。
+![potential-security-threats-in-nfv](/assets/img/potential-security-threats-in-nfv.JPG)
+* 随着NFV的发展，信息截取也将会是一个威胁。
+
+#### 资源，功能和服务建模
+
+* 为这些多供应商资源，功能和服务提供易于理解，开放和标准化的描述符将是大规模NFV部署的关键。
+* 建模时应考虑初始化部署、生命周期管理等。
+* ETSI提出三个模型：
+	1. **<span class="tooltip" titles="Topology & Orchestration Standard for Cloud Application 云应用程序的拓扑和编排标准">TOSCA</span>**:使用OASIS标准语言，用于描述基于云的Web服务的拓扑，其组件，关系以及管理它们的过程。TOSCA可用于VNF定义，节点监控以及诸如修复和扩展的主动策略。
+	2. **NETCONF/YANG**:是IETF定义的“安装，操作和删除网络设备配置”的协议。
+	3. **<span class="tooltip" titles="Information Framework">SID</span>**:是TM Forum的Frameworx的一个组成部分，旨在为企业提供信息模型和通用词汇表（如客户，位置和网络元素以及实体之间的关系)。
+
+![summary-of-nfv-information-data-models](/assets/img/summary-of-nfv-information-data-models.JPG)
+
+#### NFV的应用场景
+
+* IoT：目前已有一些研究。挑战在于保证网络效率的同时，管理产生的大量数据。
+* <span class="tooltip" titles="Information-Centric Networking 以信息为中心的网络">ICN</span>：ICN地址用数据命名，而不是主机，使得内容分发直接实现到网络结构中，而不是依赖于当前用于将内容映射到单个位置的复杂映射。可以在NFV中使用ICN来确定放置网络功能的最佳位置。
+
+#### 本章总结
+
+![summary-of-nfv-research-challenge.JPG](/assets/img/summary-of-nfv-research-challenge.JPG)
 
 
 
