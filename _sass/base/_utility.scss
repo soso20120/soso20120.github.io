@@ -52,7 +52,7 @@ a.button {
 }
 .tooltip:hover:before {
   position:absolute;
-  top:30px;
+  top:-30px;
   content:attr(titles); //使用自带title，无法隐藏默认的
   width:max-content;
   color:#fff;
