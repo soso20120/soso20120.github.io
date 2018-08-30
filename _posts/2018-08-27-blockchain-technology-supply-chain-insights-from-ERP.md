@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Blockchain Technology: Supply Chain Insights from ERP
+title: Blockchain Technology：Supply Chain Insights from ERP
+date: 2018-08-27 11:11:11
 excerpt: 
 tags:
 - Blockchain
