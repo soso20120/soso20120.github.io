@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Block-Supply chain: A New Anti-Counterfeiting Supply Chain Using NFC and Blockchain
-excerpt: 
+title: Block-Supply chain
 tags:
 - NFC
 - Blockchain
