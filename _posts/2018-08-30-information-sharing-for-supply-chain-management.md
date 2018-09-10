@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Information sharing for supply chain management based on block chain technologytechnology
+title:  Information sharing for supply chain management based on block chain technology
 excerpt: 
 tags:
 - Blockchain
