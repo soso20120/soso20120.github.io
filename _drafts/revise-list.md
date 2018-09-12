@@ -15,6 +15,7 @@ tags: [test, sample]
 3. readme
 4. 样式
 5. 主页每个博文占面积太大，改样式
+	关于.site-header 为什么branding和nav能在同一行
 6. disqus评论系统
 7. 头像
 8. 网页图标
@@ -23,6 +24,7 @@ tags: [test, sample]
 11. 暂时去掉了摘要
 12. 文章中的tag一定要调整
 13. 考虑加个注释字体
+14. 做个目录功能挺好的
 
 其中全局根结点有
 ```
