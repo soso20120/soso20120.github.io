@@ -1,6 +1,7 @@
 ---
 layout: post
-title: CoC: Secure Supply Chain Management System based on Public Ledger
+title: CoC：Secure Supply Chain Management System based on Public Ledger
+date: 2018-09-17 11:11:11
 tags:
 - Blockchain
 - Supply Chain
